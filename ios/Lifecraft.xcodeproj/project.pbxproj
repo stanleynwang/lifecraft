@@ -1,0 +1,264 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		997449D315BB5A640022EFF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D215BB5A640022EFF4 /* UIKit.framework */; };
+		997449D515BB5A640022EFF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D415BB5A640022EFF4 /* Foundation.framework */; };
+		997449D715BB5A640022EFF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D615BB5A640022EFF4 /* CoreGraphics.framework */; };
+		997449DD15BB5A640022EFF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 997449DB15BB5A640022EFF4 /* InfoPlist.strings */; };
+		997449DF15BB5A640022EFF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 997449DE15BB5A640022EFF4 /* main.m */; };
+		997449E315BB5A640022EFF4 /* LCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 997449E215BB5A640022EFF4 /* LCAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		997449CE15BB5A640022EFF4 /* Lifecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		997449D215BB5A640022EFF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		997449D415BB5A640022EFF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		997449D615BB5A640022EFF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		997449DA15BB5A640022EFF4 /* Lifecraft-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lifecraft-Info.plist"; sourceTree = "<group>"; };
+		997449DC15BB5A640022EFF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		997449DE15BB5A640022EFF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		997449E015BB5A640022EFF4 /* Lifecraft-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lifecraft-Prefix.pch"; sourceTree = "<group>"; };
+		997449E115BB5A640022EFF4 /* LCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAppDelegate.h; sourceTree = "<group>"; };
+		997449E215BB5A640022EFF4 /* LCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		997449CB15BB5A640022EFF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997449D315BB5A640022EFF4 /* UIKit.framework in Frameworks */,
+				997449D515BB5A640022EFF4 /* Foundation.framework in Frameworks */,
+				997449D715BB5A640022EFF4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		997449C315BB5A640022EFF4 = {
+			isa = PBXGroup;
+			children = (
+				997449D815BB5A640022EFF4 /* Lifecraft */,
+				997449D115BB5A640022EFF4 /* Frameworks */,
+				997449CF15BB5A640022EFF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		997449CF15BB5A640022EFF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				997449CE15BB5A640022EFF4 /* Lifecraft.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		997449D115BB5A640022EFF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				997449D215BB5A640022EFF4 /* UIKit.framework */,
+				997449D415BB5A640022EFF4 /* Foundation.framework */,
+				997449D615BB5A640022EFF4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		997449D815BB5A640022EFF4 /* Lifecraft */ = {
+			isa = PBXGroup;
+			children = (
+				997449E115BB5A640022EFF4 /* LCAppDelegate.h */,
+				997449E215BB5A640022EFF4 /* LCAppDelegate.m */,
+				997449D915BB5A640022EFF4 /* Supporting Files */,
+			);
+			path = Lifecraft;
+			sourceTree = "<group>";
+		};
+		997449D915BB5A640022EFF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				997449DA15BB5A640022EFF4 /* Lifecraft-Info.plist */,
+				997449DB15BB5A640022EFF4 /* InfoPlist.strings */,
+				997449DE15BB5A640022EFF4 /* main.m */,
+				997449E015BB5A640022EFF4 /* Lifecraft-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		997449CD15BB5A640022EFF4 /* Lifecraft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 997449E615BB5A640022EFF4 /* Build configuration list for PBXNativeTarget "Lifecraft" */;
+			buildPhases = (
+				997449CA15BB5A640022EFF4 /* Sources */,
+				997449CB15BB5A640022EFF4 /* Frameworks */,
+				997449CC15BB5A640022EFF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lifecraft;
+			productName = Lifecraft;
+			productReference = 997449CE15BB5A640022EFF4 /* Lifecraft.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		997449C515BB5A640022EFF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LC;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 997449C815BB5A640022EFF4 /* Build configuration list for PBXProject "Lifecraft" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 997449C315BB5A640022EFF4;
+			productRefGroup = 997449CF15BB5A640022EFF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				997449CD15BB5A640022EFF4 /* Lifecraft */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		997449CC15BB5A640022EFF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997449DD15BB5A640022EFF4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		997449CA15BB5A640022EFF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997449DF15BB5A640022EFF4 /* main.m in Sources */,
+				997449E315BB5A640022EFF4 /* LCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		997449DB15BB5A640022EFF4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				997449DC15BB5A640022EFF4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		997449E415BB5A640022EFF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		997449E515BB5A640022EFF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		997449E715BB5A640022EFF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lifecraft/Lifecraft-Prefix.pch";
+				INFOPLIST_FILE = "Lifecraft/Lifecraft-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		997449E815BB5A640022EFF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lifecraft/Lifecraft-Prefix.pch";
+				INFOPLIST_FILE = "Lifecraft/Lifecraft-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		997449C815BB5A640022EFF4 /* Build configuration list for PBXProject "Lifecraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				997449E415BB5A640022EFF4 /* Debug */,
+				997449E515BB5A640022EFF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		997449E615BB5A640022EFF4 /* Build configuration list for PBXNativeTarget "Lifecraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				997449E715BB5A640022EFF4 /* Debug */,
+				997449E815BB5A640022EFF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 997449C515BB5A640022EFF4 /* Project object */;
+}
