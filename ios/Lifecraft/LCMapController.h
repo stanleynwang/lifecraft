@@ -14,10 +14,13 @@
 @property (strong) CLLocationManager *locationManager;
 @property (strong) CLLocation *lastLocation;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *overlay;
 
 
 - (void)setupMap;
 // Shows current user's avatar
 - (void)setupCurrentUser;
+
+- (UIImage*)maskImage:(UIImage *)image withMask:(UIImage *)maskImage;
 
 @end

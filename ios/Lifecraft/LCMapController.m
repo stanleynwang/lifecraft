@@ -7,6 +7,8 @@
 //
 
 #import "LCMapController.h"
+#import <AFNetworking/AFNetworking.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface LCMapController ()
 
@@ -14,6 +16,7 @@
 
 @implementation LCMapController
 @synthesize mapView;
+@synthesize overlay;
 
 @synthesize locationManager, lastLocation;
 
@@ -22,9 +25,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setupMap];
-        [self setupCurrentUser];
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupCurrentUser];
 }
 
 - (void)setupMap {
@@ -38,7 +45,24 @@
 }
 
 - (void)setupCurrentUser {
+    UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(135, 310, 50, 50)];
+    avatar.backgroundColor = [UIColor redColor];
+    UIImage *placeholder = [UIImage imageNamed:@"placeholder.jpg"];
+//    avatar.image = placeholder;
+    [avatar setImageWithURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/1740f056b79158cc9c8c287bb32573e5"] placeholderImage:placeholder];
+
+    [self.overlay addSubview:avatar];
     
+    CALayer* maskLayer = [CALayer layer];
+    maskLayer.frame = CGRectMake(0,0, 50, 50);
+    maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"Mask.png"] CGImage];
+    
+    // Apply the mask to your uiview layer
+    avatar.layer.mask = maskLayer;
+    
+//    avatar.layer.shadowColor = [UIColor blackColor].CGColor;
+//    avatar.layer.shadowOffset = CGSizeMake(5.0, 5.0);
+//    avatar.layer.shadowRadius = 3.0;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
@@ -59,15 +83,10 @@
 }
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
 - (void)viewDidUnload
 {
     [self setMapView:nil];
+    [self setOverlay:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
