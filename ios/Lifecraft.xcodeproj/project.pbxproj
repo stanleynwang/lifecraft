@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C7E9E15BB5B630066D8D5 /* LCMapController.m */; };
+		995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995C7E9F15BB5B630066D8D5 /* LCMapController.xib */; };
+		995C7EA615BB5D730066D8D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995C7EA515BB5D730066D8D5 /* MapKit.framework */; };
+		995C7EAF15BB603D0066D8D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995C7EAE15BB603D0066D8D5 /* CoreLocation.framework */; };
 		997449D315BB5A640022EFF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D215BB5A640022EFF4 /* UIKit.framework */; };
 		997449D515BB5A640022EFF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D415BB5A640022EFF4 /* Foundation.framework */; };
 		997449D715BB5A640022EFF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D615BB5A640022EFF4 /* CoreGraphics.framework */; };
@@ -16,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		995C7E9D15BB5B630066D8D5 /* LCMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMapController.h; sourceTree = "<group>"; };
+		995C7E9E15BB5B630066D8D5 /* LCMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMapController.m; sourceTree = "<group>"; };
+		995C7E9F15BB5B630066D8D5 /* LCMapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCMapController.xib; sourceTree = "<group>"; };
+		995C7EA515BB5D730066D8D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		995C7EAE15BB603D0066D8D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		997449CE15BB5A640022EFF4 /* Lifecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997449D215BB5A640022EFF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		997449D415BB5A640022EFF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -33,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995C7EAF15BB603D0066D8D5 /* CoreLocation.framework in Frameworks */,
+				995C7EA615BB5D730066D8D5 /* MapKit.framework in Frameworks */,
 				997449D315BB5A640022EFF4 /* UIKit.framework in Frameworks */,
 				997449D515BB5A640022EFF4 /* Foundation.framework in Frameworks */,
 				997449D715BB5A640022EFF4 /* CoreGraphics.framework in Frameworks */,
@@ -42,9 +53,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		995C7EA315BB5B680066D8D5 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				995C7E9D15BB5B630066D8D5 /* LCMapController.h */,
+				995C7E9E15BB5B630066D8D5 /* LCMapController.m */,
+				995C7E9F15BB5B630066D8D5 /* LCMapController.xib */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		995C7EA415BB5B6C0066D8D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				995C7EA315BB5B680066D8D5 /* Map */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		997449C315BB5A640022EFF4 = {
 			isa = PBXGroup;
 			children = (
+				995C7EAE15BB603D0066D8D5 /* CoreLocation.framework */,
+				995C7EA515BB5D730066D8D5 /* MapKit.framework */,
 				997449D815BB5A640022EFF4 /* Lifecraft */,
 				997449D115BB5A640022EFF4 /* Frameworks */,
 				997449CF15BB5A640022EFF4 /* Products */,
@@ -75,6 +106,7 @@
 				997449E115BB5A640022EFF4 /* LCAppDelegate.h */,
 				997449E215BB5A640022EFF4 /* LCAppDelegate.m */,
 				997449D915BB5A640022EFF4 /* Supporting Files */,
+				995C7EA415BB5B6C0066D8D5 /* Controllers */,
 			);
 			path = Lifecraft;
 			sourceTree = "<group>";
@@ -142,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				997449DD15BB5A640022EFF4 /* InfoPlist.strings in Resources */,
+				995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +187,7 @@
 			files = (
 				997449DF15BB5A640022EFF4 /* main.m in Sources */,
 				997449E315BB5A640022EFF4 /* LCAppDelegate.m in Sources */,
+				995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +291,7 @@
 				997449E815BB5A640022EFF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
