@@ -24,7 +24,7 @@
 @synthesize mapView;
 @synthesize overlay;
 
-@synthesize locationManager, lastLocation, quests, users, questController;
+@synthesize locationManager, lastLocation, quests, users, questController, questViews;
 @synthesize bar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,6 +36,7 @@
         RNObserveNotification(@"QuestButtonTap", @selector(didTapQuest:));
         
         self.bar = [[LCNavigationBar alloc] initWithFrame:CGRectMake(0, 371, 320, 80)];
+        self.questViews = [NSMutableArray array];
     }
     return self;
 }
@@ -43,9 +44,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.overlay addSubview:self.bar];
-    
-    [self loadQuests];
+
     [self loadUsers];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self loadQuests];
 }
 
 - (void)setupMap {
@@ -170,11 +174,17 @@
 }
 
 - (void)displayQuests {
+    for (UIView *view in self.questViews) {
+        [view removeFromSuperview];
+    }
+    [self.questViews removeAllObjects];
+    
     for (LCQuest *quest in self.quests) {
         LCQuestView *view = [[LCQuestView alloc] initWithFrame:CGRectZero];
         view.quest = quest;
         [self positionView:view byDistance:quest.distance.integerValue];
         [self.overlay addSubview:view];
+        [self.questViews addObject:view];
     }
 }
 

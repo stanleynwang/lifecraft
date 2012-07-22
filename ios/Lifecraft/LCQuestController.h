@@ -15,7 +15,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *experience;
 @property (weak, nonatomic) IBOutlet UITextView *text;
+@property (weak, nonatomic) IBOutlet UILabel *address;
 - (IBAction)accept:(id)sender;
 - (IBAction)hide:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *hide;
+@property (weak, nonatomic) IBOutlet UIButton *accept;
+@property (weak, nonatomic) IBOutlet UIButton *finish;
+- (IBAction)finish:(id)sender;
 
 @end

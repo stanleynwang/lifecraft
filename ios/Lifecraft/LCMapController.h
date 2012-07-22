@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *overlay;
 
 @property (strong) NSArray *quests;
+@property (strong) NSMutableArray *questViews;
 
 @property (strong) NSArray *users;
 

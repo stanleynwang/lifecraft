@@ -39,6 +39,10 @@
 		995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995C7E9F15BB5B630066D8D5 /* LCMapController.xib */; };
 		995C7EA615BB5D730066D8D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995C7EA515BB5D730066D8D5 /* MapKit.framework */; };
 		995C7EAF15BB603D0066D8D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995C7EAE15BB603D0066D8D5 /* CoreLocation.framework */; };
+		996CEE6B15BC6C5900705907 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE6A15BC6C5900705907 /* Background.png */; };
+		996CEE6E15BC6CC100705907 /* QuestFinish.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE6D15BC6CC100705907 /* QuestFinish.png */; };
+		996CEE7015BC6E2B00705907 /* BarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE6F15BC6E2B00705907 /* BarButton.png */; };
+		996CEE7215BC6EAD00705907 /* BottomBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE7115BC6EAD00705907 /* BottomBar.png */; };
 		997449D315BB5A640022EFF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D215BB5A640022EFF4 /* UIKit.framework */; };
 		997449D515BB5A640022EFF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D415BB5A640022EFF4 /* Foundation.framework */; };
 		997449D715BB5A640022EFF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D615BB5A640022EFF4 /* CoreGraphics.framework */; };
@@ -98,6 +102,10 @@
 		995C7E9F15BB5B630066D8D5 /* LCMapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCMapController.xib; sourceTree = "<group>"; };
 		995C7EA515BB5D730066D8D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		995C7EAE15BB603D0066D8D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		996CEE6A15BC6C5900705907 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		996CEE6D15BC6CC100705907 /* QuestFinish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QuestFinish.png; sourceTree = "<group>"; };
+		996CEE6F15BC6E2B00705907 /* BarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarButton.png; sourceTree = "<group>"; };
+		996CEE7115BC6EAD00705907 /* BottomBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BottomBar.png; sourceTree = "<group>"; };
 		997449CE15BB5A640022EFF4 /* Lifecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997449D215BB5A640022EFF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		997449D415BB5A640022EFF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -264,14 +272,18 @@
 				99066D6715BB988B0034528D /* Bar@2x.png */,
 				99066D6915BB9AC90034528D /* Level@2x.png */,
 				9922790D15BC42DD004B9F6B /* Background@2x.png */,
+				996CEE6A15BC6C5900705907 /* Background.png */,
 				9922791015BC433F004B9F6B /* InputBackground@2x.png */,
 				9922791115BC433F004B9F6B /* InputBackground.png */,
 				9922791415BC43E9004B9F6B /* Button@2x.png */,
 				9922791515BC43E9004B9F6B /* Button.png */,
 				9922791815BC461E004B9F6B /* BottomBar@2x.png */,
+				996CEE7115BC6EAD00705907 /* BottomBar.png */,
 				9922791A15BC46E4004B9F6B /* BarButton@2x.png */,
+				996CEE6F15BC6E2B00705907 /* BarButton.png */,
 				9922791C15BC4B95004B9F6B /* BackButton@2x.png */,
 				9913E19315BC57500091BB12 /* QuestFinish@2x.png */,
+				996CEE6D15BC6CC100705907 /* QuestFinish.png */,
 				9913E19615BC57DD0091BB12 /* CellBackground@2x.png */,
 			);
 			name = Resources;
@@ -367,6 +379,10 @@
 				9922792115BC4F42004B9F6B /* Icon.png in Resources */,
 				9913E19415BC57500091BB12 /* QuestFinish@2x.png in Resources */,
 				9913E19715BC57DD0091BB12 /* CellBackground@2x.png in Resources */,
+				996CEE6B15BC6C5900705907 /* Background.png in Resources */,
+				996CEE6E15BC6CC100705907 /* QuestFinish.png in Resources */,
+				996CEE7015BC6E2B00705907 /* BarButton.png in Resources */,
+				996CEE7215BC6EAD00705907 /* BottomBar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

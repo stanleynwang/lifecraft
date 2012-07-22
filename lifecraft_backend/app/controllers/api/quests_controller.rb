@@ -33,7 +33,9 @@ class Api::QuestsController < ApplicationController
 
   def complete_quest
     @user  = current_user
-    @quest = Quest.find(params[:id])
+    @quest = current_user.quests.find { |q|
+      q.activity.id == params[:id].to_i
+    }
     if (not @quest.nil?) and (@quest.user == @user) and (not @quest.completed)
       @quest.completed = true
       @quest.save

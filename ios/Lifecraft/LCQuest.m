@@ -28,7 +28,7 @@
         
         
         quest.title = [item objectForKey:@"name"];
-        quest.experience = [NSNumber numberWithInt:500]; // TODO: Actual experience
+        quest.experience = [item objectForKey:@"experience"];
         
         CGFloat lati = ((NSNumber *)[item objectForKey:@"latitude"]).floatValue;
         CGFloat longi = ((NSNumber *)[item objectForKey:@"longitude"]).floatValue;
