@@ -2,8 +2,11 @@ Lifecraft::Application.routes.draw do
   root :to => 'welcome#index'
 
   # Welcome
-  match '_about' => 'welcome#_about', :as => '_about'
+  match 'index' => 'welcome#index', :as => 'index'
+  match '_index' => 'welcome#_index', :as => '_index'
+
   match 'about' => 'welcome#about', :as => 'about'
+  match '_about' => 'welcome#_about', :as => '_about'
 
   # Users
   resources :users

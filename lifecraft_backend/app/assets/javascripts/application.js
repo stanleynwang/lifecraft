@@ -13,3 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+(function($) {
+
+$(function() {
+  $('ul.nav li a[href!="#"]').click(function() {
+    var $e = $(this), $yield = $('#yield'), target = '/_' + $e.attr('href');
+    $yield.load(target, function() {
+      $('ul.nav li').removeClass('active');
+      $e.parent().addClass('active');
+    });
+    return false;
+  });
+});
+
+})(jQuery);
+
