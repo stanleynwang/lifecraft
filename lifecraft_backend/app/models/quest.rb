@@ -1,5 +1,5 @@
 class Quest
-  attr_accessible :user, :activity
+  attr_accessor :user, :activity
 
   def to_json
     {
