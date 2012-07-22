@@ -1,8 +1,8 @@
 require 'json'
 require 'rest_client'
 
-class ActivityFinder
-  def location_from_address(addr)
+class AddressConverter
+  def self.location_from_address(addr)
     Location = Struct.new(:lat, :long)
     resp = RestClient.get("https://maps.googleapis.com/maps/api/geocode/json",
                           {:params => {:address => addr,
