@@ -26,7 +26,7 @@ class Api::QuestsController < ApplicationController
     @user  = current_user
     @quest = @user.current_quest
     if not @quest.nil?
-      @user.experience += 10
+      @user.experience += 400
       @user.current_quest = nil
       @user.save
       render :json => {:success => true}
