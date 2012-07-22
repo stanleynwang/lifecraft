@@ -33,6 +33,11 @@ class Api::UsersController < ApplicationController
     render :json => @user
   end
 
+  def current_quests
+    #TODO OH GOD THIS IS HORRIBLE
+    render :json => current_user.quests.reject{|x| x.completed }
+  end
+
   def edit
     @user = current_user
   end
