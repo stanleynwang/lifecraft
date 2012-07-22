@@ -38,3 +38,4 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'nokogiri'
+gem 'rest-client', '~> 1.6.7'
