@@ -19,15 +19,16 @@ class Api::UserSessionsController < ApplicationController
     end
 
     @user_session = UserSession.new(user_params)
+    @user_session.save
     render :json => @user
   end
 
   def destroy
     if current_user_session.nil?
-      render :text => "{success: false}"
+      render :json => {:success => false}
     else
       current_user_session.destroy
-      render :text => "{success: true}"
+      render :json => {:success => true}
     end
   end
 end

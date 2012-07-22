@@ -13,9 +13,9 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render :text => "{success: true}"
+      render :json => {:success => true}
     else
-      render :text => "{success: false}"
+      render :json => {:success => false}
     end
 
   end
@@ -24,6 +24,7 @@ class Api::UsersController < ApplicationController
     if !params[:id].nil?
       if params[:id] == 'current_user'
         @user = current_user
+      else
         @user = User.find(params[:id])
       end
     else
@@ -31,6 +32,11 @@ class Api::UsersController < ApplicationController
     end
 
     render :json => @user
+  end
+
+  def current_quests
+    #TODO OH GOD THIS IS HORRIBLE
+    render :json => current_user.quests.reject{|x| x.completed }
   end
 
   def edit

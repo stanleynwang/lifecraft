@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
   end
 
+  # def by_completed(role) #great for returning all of the users whose role is FRIEND
+  #   find(:all, :conditions => ["quests.completed = ?", role])
+  # end
+
   after_validation :log_errors, :if => Proc.new {|m| m.errors}
 
   def log_errors
