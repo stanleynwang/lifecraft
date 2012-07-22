@@ -36,16 +36,18 @@ var Lifecraft = (function() {
     }, 'json');
   }
 
-  function signout() {
+  function signout(silent) {
+    silent = silent || false;
+
     $.ajax({
       type: 'DELETE',
       url: '/api/logout',
       success: function(data) {
         if (!data.success) {
-          $(document).trigger('auth:signedout', {success: false});
+          $(document).trigger('auth:signedout', {success: false, silent: silent});
         } else {
           _user = null;
-          $(document).trigger('auth:signedout', {success: true});
+          $(document).trigger('auth:signedout', {success: true, silent: silent});
         }
       }
     });
@@ -96,8 +98,9 @@ $(function() {
   $('form.signin').submit(function() {
     var $e = $(this), $email = $e.find('input[type=email]');
     var email = $email.val();
-    $email.replaceWith($fullProgressbar);
-    $e.find('button').prop('disabled', true);
+    $email.hide();
+    $email.after($fullProgressbar);
+    // $e.find('button').prop('disabled', true);
 
     Lifecraft.signin(email);
     return false;
@@ -105,8 +108,12 @@ $(function() {
 
   $(document).on('auth:signedin', function(event, data) {
     if (data.success) {
-      var $userInfo = $.tmpl('userInfo', data.user);
-      $('form.signin').replaceWith($userInfo);
+      if (data.user.notice && data.user.notice == 'must be logged out') {
+        Lifecraft.signout(true);
+      } else {
+        var $userInfo = $.tmpl('userInfo', data.user);
+        $('form.signin').replaceWith($userInfo);
+      }
     } else {
       $fullProgressbar.replaceWith($('<div class="alert alert-error">').html(
         'An error occured while signing in.'
@@ -116,8 +123,15 @@ $(function() {
 
   $(document).on('click', 'ul.userinfo a.signout', function(event) {
     Lifecraft.signout();
-    window.location.reload();
     return false;
+  });
+
+  $(document).on('auth:signedout', function(event, data) {
+    if (!data.silent) {
+      window.location.reload();
+    } else {
+      $('form.signin').submit();
+    }
   });
 });
 
