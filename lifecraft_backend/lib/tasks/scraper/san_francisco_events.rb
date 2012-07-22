@@ -1,0 +1,109 @@
+require 'mechanize'
+require 'peach'
+
+class Scraper::SanFranciscoEvents
+  Scraper::SCRAPERS << self
+
+  URL_HOST = 'http://www.sanfrancisco.travel'
+  URL_BASE = "#{URL_HOST}/events/"
+  DEFAULT_PARAMS = {
+    :result => 'yes',
+    :cat => '',
+    :sid => 1,
+    :where => 'san francisco, ca'
+  }
+
+  def self.url
+    URL_HOST
+  end
+
+  def initialize(date)
+    @date = date
+    @bot = Mechanize.new
+  end
+
+  def uri(opts)
+    opts.reverse_merge!(DEFAULT_PARAMS)
+    url = URI(URL_BASE)
+    url.query = URI.encode_www_form(opts)
+    url
+  end
+
+  def date
+    @date.strftime('%m/%d/%Y')
+  end
+
+  def scrape!
+    date = "#{self.date} to #{self.date}"
+    url = uri(:when => date)
+
+    first_page = @bot.get(url)
+    rest_pages = first_page.links_with(:href => %r{^/events.+pid=\d+}).map { |l|
+      l.click
+    }
+
+    pages = [first_page, *rest_pages].pmap { |doc| Page.new(doc).entries }
+    pages.flatten!
+    pages
+  end
+
+  class Page
+    def initialize(page)
+      @page = page
+    end
+
+    def entries
+      links = @page.links_with(:href => %r{^/events\?zventId=})
+      links.uniq! { |x| x.href }
+      links.pmap do |x|
+        event_page = x.click
+        link = event_page.link_with(:text => 'Link', :href => %r{^http://www.zvents.com})
+        Entry.new(link.click, link.href).to_hash
+      end
+    end
+  end
+
+  class Entry
+    def initialize(page, url)
+      @page = page
+      @url = url
+    end
+
+    def title
+      @page.search('h1.name span.summary').first.inner_text
+    end
+
+    def start_time
+      Date.parse(@page.search('.dtstart').first['title'])
+    end
+
+    def end_time
+      e = @page.search('.dtend').first
+      e ? Date.parse(e['title']) : e
+    end
+
+    def description
+      desc = @page.search('.description p').first
+      return nil if not desc
+      spans = desc.search('span')
+
+      if spans.size == 0
+        desc.inner_text
+      else
+        spans[0].inner_text.strip + spans[-2].inner_text.strip
+      end
+    end
+
+    def to_hash
+      {
+        :title => title,
+        :description => description,
+        :start_time => start_time,
+        :end_time => end_time,
+        :url => @url,
+        :source => self.class
+      }
+    end
+  end
+end
+
