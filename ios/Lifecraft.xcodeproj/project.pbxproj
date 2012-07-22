@@ -22,6 +22,8 @@
 		99066D7315BBA0FA0034528D /* LCQuestsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D7115BBA0FA0034528D /* LCQuestsList.m */; };
 		99066D7415BBA0FA0034528D /* LCQuestsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99066D7215BBA0FA0034528D /* LCQuestsList.xib */; };
 		99066D7E15BBA21A0034528D /* LCQuestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D7D15BBA21A0034528D /* LCQuestCell.m */; };
+		9913E19415BC57500091BB12 /* QuestFinish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9913E19315BC57500091BB12 /* QuestFinish@2x.png */; };
+		9913E19715BC57DD0091BB12 /* CellBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9913E19615BC57DD0091BB12 /* CellBackground@2x.png */; };
 		9922790E15BC42DD004B9F6B /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922790D15BC42DD004B9F6B /* Background@2x.png */; };
 		9922791215BC433F004B9F6B /* InputBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791015BC433F004B9F6B /* InputBackground@2x.png */; };
 		9922791315BC433F004B9F6B /* InputBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791115BC433F004B9F6B /* InputBackground.png */; };
@@ -78,6 +80,8 @@
 		99066D7215BBA0FA0034528D /* LCQuestsList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCQuestsList.xib; sourceTree = "<group>"; };
 		99066D7C15BBA2190034528D /* LCQuestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuestCell.h; sourceTree = "<group>"; };
 		99066D7D15BBA21A0034528D /* LCQuestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuestCell.m; sourceTree = "<group>"; };
+		9913E19315BC57500091BB12 /* QuestFinish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QuestFinish@2x.png"; sourceTree = "<group>"; };
+		9913E19615BC57DD0091BB12 /* CellBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CellBackground@2x.png"; sourceTree = "<group>"; };
 		9922790D15BC42DD004B9F6B /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
 		9922791015BC433F004B9F6B /* InputBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InputBackground@2x.png"; sourceTree = "<group>"; };
 		9922791115BC433F004B9F6B /* InputBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InputBackground.png; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				9922791815BC461E004B9F6B /* BottomBar@2x.png */,
 				9922791A15BC46E4004B9F6B /* BarButton@2x.png */,
 				9922791C15BC4B95004B9F6B /* BackButton@2x.png */,
+				9913E19315BC57500091BB12 /* QuestFinish@2x.png */,
+				9913E19615BC57DD0091BB12 /* CellBackground@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -359,6 +365,8 @@
 				9922791D15BC4B95004B9F6B /* BackButton@2x.png in Resources */,
 				9922791F15BC4F3F004B9F6B /* Icon@2x.png in Resources */,
 				9922792115BC4F42004B9F6B /* Icon.png in Resources */,
+				9913E19415BC57500091BB12 /* QuestFinish@2x.png in Resources */,
+				9913E19715BC57DD0091BB12 /* CellBackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

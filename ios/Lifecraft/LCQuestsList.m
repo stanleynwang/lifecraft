@@ -19,6 +19,11 @@
 @synthesize tableView;
 @synthesize quests;
 
+- (void)viewDidLoad {
+    UIImage *image = [UIImage imageNamed:@"Background.png"];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:image];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [self loadQuests];
     

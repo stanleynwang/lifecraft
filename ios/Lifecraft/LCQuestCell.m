@@ -16,6 +16,9 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
+        UIImage *image = [UIImage imageNamed:@"CellBackground.png"];
+        self.backgroundView = [[UIImageView alloc] initWithImage:image];
+        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         self.title = [[UILabel alloc] initWithFrame:CGRectMake(36, 6, 220, 20)];
