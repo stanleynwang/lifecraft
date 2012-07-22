@@ -7,7 +7,7 @@ class Api::ActivitiesController < ApplicationController
   def find
     date = Date.parse(params[:date])
     if !params[:lat] || !params[:long]
-      render :json => {:error => 'Lat and long required'}
+      render :json => {:error => 'Lat and long required'}, :status => :bad_request
     else
       location = [params[:lat].to_f, params[:long].to_f]
       radius = params[:radius] ? params[:radius].to_f : 1.5

@@ -1,5 +1,4 @@
 class Api::QuestsController < ApplicationController
-
   # this should probably be create by definition of what we are doing... :|
   def new
     @quest = Quest.new
