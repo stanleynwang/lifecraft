@@ -17,6 +17,7 @@
 		99066D5815BB91540034528D /* LCQuestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99066D5615BB91540034528D /* LCQuestController.xib */; };
 		99066D6615BB98380034528D /* LCNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D6515BB98380034528D /* LCNavigationBar.m */; };
 		99066D6815BB988B0034528D /* Bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99066D6715BB988B0034528D /* Bar@2x.png */; };
+		99066D6A15BB9AC90034528D /* Level@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99066D6915BB9AC90034528D /* Level@2x.png */; };
 		993A060915BB751B00EB93FF /* Quest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993A060815BB751B00EB93FF /* Quest@2x.png */; };
 		995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C7E9E15BB5B630066D8D5 /* LCMapController.m */; };
 		995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995C7E9F15BB5B630066D8D5 /* LCMapController.xib */; };
@@ -53,6 +54,7 @@
 		99066D6415BB98380034528D /* LCNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationBar.h; sourceTree = "<group>"; };
 		99066D6515BB98380034528D /* LCNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationBar.m; sourceTree = "<group>"; };
 		99066D6715BB988B0034528D /* Bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar@2x.png"; sourceTree = "<group>"; };
+		99066D6915BB9AC90034528D /* Level@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level@2x.png"; sourceTree = "<group>"; };
 		993A060815BB751B00EB93FF /* Quest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quest@2x.png"; sourceTree = "<group>"; };
 		995C7E9D15BB5B630066D8D5 /* LCMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMapController.h; sourceTree = "<group>"; };
 		995C7E9E15BB5B630066D8D5 /* LCMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMapController.m; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				99015ACB15BB7BB9007F50D2 /* QuestArrow@2x.png */,
 				99066D4315BB89970034528D /* Circle@2x.png */,
 				99066D6715BB988B0034528D /* Bar@2x.png */,
+				99066D6915BB9AC90034528D /* Level@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				99066D4415BB89970034528D /* Circle@2x.png in Resources */,
 				99066D5815BB91540034528D /* LCQuestController.xib in Resources */,
 				99066D6815BB988B0034528D /* Bar@2x.png in Resources */,
+				99066D6A15BB9AC90034528D /* Level@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

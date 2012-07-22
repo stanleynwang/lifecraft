@@ -34,6 +34,20 @@
         [self addSubview:view];
     }
     
+    UIView *level = [[UIView alloc] initWithFrame:CGRectMake(30, 20, 21, 21)];
+    level.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Level.png"]];
+    UILabel *levLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 21, 21)];
+    levLab.backgroundColor = [UIColor clearColor];
+    levLab.text = [NSString stringWithFormat:@"%@", self.user.level];
+    levLab.font = [UIFont boldSystemFontOfSize:11];
+    levLab.textAlignment = UITextAlignmentCenter;
+    levLab.textColor = [UIColor whiteColor];
+    levLab.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
+    levLab.shadowOffset = CGSizeMake(0, 1);
+    [level addSubview:levLab];
+    
+    [self addSubview:level];
+    
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    view.backgroundColor = [UIColor redColor];
 //    [self addSubview:view];
