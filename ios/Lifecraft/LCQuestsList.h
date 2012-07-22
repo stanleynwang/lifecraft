@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LCQuestsList : UIViewController <UITableViewDataSource, UITabBarDelegate>
+@interface LCQuestsList : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong) NSArray *quests;

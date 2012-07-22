@@ -47,6 +47,9 @@
 		996CEE7615BC78FE00705907 /* Ding.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE7415BC78FE00705907 /* Ding.png */; };
 		996CEE7C15BC7B9900705907 /* Particles_fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE7B15BC7B9900705907 /* Particles_fire.png */; };
 		996CEE7F15BC7BD700705907 /* LCOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 996CEE7E15BC7BD700705907 /* LCOverlayView.m */; };
+		996CEE9715BC853000705907 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE9615BC853000705907 /* Quest.png */; };
+		996CEE9A15BC854C00705907 /* QuestArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE9915BC854C00705907 /* QuestArrow.png */; };
+		996CEE9C15BC857E00705907 /* Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 996CEE9B15BC857E00705907 /* Bar.png */; };
 		997449D315BB5A640022EFF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D215BB5A640022EFF4 /* UIKit.framework */; };
 		997449D515BB5A640022EFF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D415BB5A640022EFF4 /* Foundation.framework */; };
 		997449D715BB5A640022EFF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997449D615BB5A640022EFF4 /* CoreGraphics.framework */; };
@@ -115,6 +118,9 @@
 		996CEE7B15BC7B9900705907 /* Particles_fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particles_fire.png; sourceTree = "<group>"; };
 		996CEE7D15BC7BD700705907 /* LCOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCOverlayView.h; sourceTree = "<group>"; };
 		996CEE7E15BC7BD700705907 /* LCOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCOverlayView.m; sourceTree = "<group>"; };
+		996CEE9615BC853000705907 /* Quest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quest.png; sourceTree = "<group>"; };
+		996CEE9915BC854C00705907 /* QuestArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QuestArrow.png; sourceTree = "<group>"; };
+		996CEE9B15BC857E00705907 /* Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bar.png; sourceTree = "<group>"; };
 		997449CE15BB5A640022EFF4 /* Lifecraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifecraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997449D215BB5A640022EFF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		997449D415BB5A640022EFF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -279,9 +285,12 @@
 				99BBDAF215BB6A8800332C88 /* Mask@2x.png */,
 				99BBDAE915BB664D00332C88 /* placeholder.jpg */,
 				993A060815BB751B00EB93FF /* Quest@2x.png */,
+				996CEE9615BC853000705907 /* Quest.png */,
 				99015ACB15BB7BB9007F50D2 /* QuestArrow@2x.png */,
+				996CEE9915BC854C00705907 /* QuestArrow.png */,
 				99066D4315BB89970034528D /* Circle@2x.png */,
 				99066D6715BB988B0034528D /* Bar@2x.png */,
+				996CEE9B15BC857E00705907 /* Bar.png */,
 				99066D6915BB9AC90034528D /* Level@2x.png */,
 				9922790D15BC42DD004B9F6B /* Background@2x.png */,
 				996CEE6A15BC6C5900705907 /* Background.png */,
@@ -400,6 +409,9 @@
 				996CEE7515BC78FE00705907 /* Ding@2x.png in Resources */,
 				996CEE7615BC78FE00705907 /* Ding.png in Resources */,
 				996CEE7C15BC7B9900705907 /* Particles_fire.png in Resources */,
+				996CEE9715BC853000705907 /* Quest.png in Resources */,
+				996CEE9A15BC854C00705907 /* QuestArrow.png in Resources */,
+				996CEE9C15BC857E00705907 /* Bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,8 @@
 #import "LCUserView.h"
 #import "LCNavigationBar.h"
 
+static int _x_v;
+
 @interface LCMapController ()
 
 @end
@@ -34,6 +36,7 @@
         [self setupMap];
         
         RNObserveNotification(@"QuestButtonTap", @selector(didTapQuest:));
+        RNObserveNotification(@"QuestList.didSelectQuest", @selector(didTapQuest:));
         
         self.bar = [[LCNavigationBar alloc] initWithFrame:CGRectMake(0, 371, 320, 80)];
         self.questViews = [NSMutableArray array];
@@ -47,6 +50,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    _x_v = 0;
     [self loadQuests];
     [self loadUser];
     [self showLastLocation];
@@ -133,8 +137,6 @@
         distance = 100;
         [view performSelector:@selector(setFarAway)];
     }
-    
-    static int _x_v = 0;
     
     CGFloat x = (_x_v++) * 60 + 5;
     if (_x_v > 4) _x_v = 0;

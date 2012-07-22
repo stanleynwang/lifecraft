@@ -80,4 +80,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    LCQuest *quest = [self.quests objectAtIndex:indexPath.row];
+    RNPostNotificationWithObject(@"QuestList.didSelectQuest", quest);
+}
+
+
 @end
