@@ -43,14 +43,15 @@ class Scraper::SanFranciscoEvents
       l.click
     }
 
-    pages = [first_page, *rest_pages].pmap { |doc| Page.new(doc).entries }
+    pages = [first_page, *rest_pages].pmap { |doc| Page.new(doc, self.class).entries }
     pages.flatten!
     pages
   end
 
   class Page
-    def initialize(page)
+    def initialize(page, source)
       @page = page
+      @source = source
     end
 
     def entries
@@ -59,7 +60,9 @@ class Scraper::SanFranciscoEvents
       links.pmap do |x|
         event_page = x.click
         link = event_page.link_with(:text => 'Link', :href => %r{^http://www.zvents.com})
-        Entry.new(link.click, link.href).to_hash
+        hash = Entry.new(link.click, link.href).to_hash
+        hash[:source] = @source
+        hash
       end
     end
   end
@@ -101,8 +104,7 @@ class Scraper::SanFranciscoEvents
         :description => description,
         :start_time => start_time,
         :end_time => end_time,
-        :url => @url,
-        :source => self.class
+        :url => @url
       }
     end
   end
