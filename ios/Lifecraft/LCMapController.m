@@ -9,6 +9,7 @@
 #import "LCMapController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <QuartzCore/QuartzCore.h>
+#import <AFNetworking/AFJSONUtilities.h>
 #import "LCQuest.h"
 #import "LCQuestView.h"
 #import "LCUser.h"
@@ -139,23 +140,33 @@
 
 - (void)loadQuests {
     // Stub some quests
-    LCQuest *quest1 = [[LCQuest alloc] init];
-    quest1.distance = [NSNumber numberWithInt:5];
-    quest1.title = @"Greylock Hackfest";
-    quest1.text = @"Come spend the weekend at Dropbox HQ hacking on your own projects!";
-    quest1.location = [[CLLocation alloc] initWithLatitude:37.776154 longitude:-122.393136];
-    quest1.experience = [NSNumber numberWithInt:200];
     
-    LCQuest *quest2 = [[LCQuest alloc] init];
-    quest2.distance = [NSNumber numberWithInt:300];
-    quest2.title = @"Visit Alcatraz";
-    quest2.text = @"Trip to Alcatraz for $30.";
-    quest2.location = [[CLLocation alloc] initWithLatitude:37.0625 longitude:-95.677068];
-    quest2.experience = [NSNumber numberWithInt:200];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
+                            [NSURL URLWithString:@"http://192.168.0.126:9001/"]];
+
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"YY-MM-dd"];
+    NSString *date = [format stringFromDate:[NSDate date]];
+    NSString *path = [NSString stringWithFormat:@"/api/activity/find/%@", date];
     
-    self.quests = [NSArray arrayWithObjects:quest1, quest2, nil];
+    CGFloat lati = self.lastLocation.coordinate.latitude;
+    CGFloat longi = self.lastLocation.coordinate.longitude;
     
-    [self displayQuests];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:lati], @"lat",
+                            [NSNumber numberWithFloat:longi], @"long", nil];
+    
+    NSLog(@"%@ %@", path, params);
+        
+    [client getPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *data = AFJSONDecode(responseObject, nil);
+        self.quests = [LCQuest questsFromResponse:data];
+        NSLog(@"Request finished: %@", data);
+        
+        [self displayQuests];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Request failed %@", error);
+    }];
+    
 }
 
 - (void)displayQuests {

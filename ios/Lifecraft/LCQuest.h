@@ -16,4 +16,6 @@
 @property (strong) CLLocation *location;
 @property (strong) NSNumber *experience;
 
++ (NSArray *)questsFromResponse:(NSArray *)data;
+
 @end
