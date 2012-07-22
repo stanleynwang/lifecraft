@@ -24,4 +24,8 @@ Lifecraft::Application.routes.draw do
   match 'api/quest/:id' => 'api/quests#show',       :as => :'api_quest_id'
   match 'api/quest/:id/complete' => 'api/quests#complete_quest',
     :as => :'api_quest_id_complete'
+  match 'api/activity/:id' => 'api/activities#show',
+    :as => :'api_activity_id'
+  match 'api/activity/find/:date' => 'api/activities#find',
+    :as => :'api_activity_find'
 end
