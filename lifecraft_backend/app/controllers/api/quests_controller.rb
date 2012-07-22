@@ -21,8 +21,13 @@ class Api::QuestsController < ApplicationController
   end
 
   def current
-    #TODO OH GOD THIS IS HORRIBLE
-    render :json => current_user.quests.reject{|x| x.completed }
+    # TODO OH GOD THIS IS HORRIBLE
+    # It's cute
+    render :json => current_user.quests.reject{ |x| x.completed }.map { |q|
+      data = q.as_json
+      data.merge!(q.activity.as_json)
+      data
+    }
   end
 
   def complete_quest

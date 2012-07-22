@@ -50,7 +50,8 @@
     
     [client getPath:@"/api/quest/current" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id data = AFJSONDecode(responseObject, nil);
-        NSLog(@"Loaded current quests: %@", data);
+        self.quests = [LCQuest questsFromResponse:data];
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Request failed %@", error);
     }];
