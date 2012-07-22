@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
     user_params = {}
     user_params[:email] = params[:email]
     user_params[:password] = "derp"
-    user_params[:password_confirmation] = params[:password_confirmation]
+    user_params[:password_confirmation] = "derp"
     @user = User.new(user_params)
 
     if @user.save
@@ -22,6 +22,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = current_user
+    render :json => @user
   end
 
   def edit
