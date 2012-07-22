@@ -27,11 +27,10 @@
 - (void)layoutSubviews {
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Quest.png"]];
-    CGRect frame = image.frame;
-    frame.origin = CGPointMake(0, 15);
-    image.frame = frame;
-    [self addSubview:image];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 15, 50, 50)];
+    [button setImage:[UIImage imageNamed:@"Quest.png"] forState:UIControlStateNormal];    
+    [self addSubview:button];
+    [button addTarget:self action:@selector(didTap:) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 65, 50, 30)];
 
@@ -60,6 +59,10 @@
 
 - (void)setFarAway {
     self.isFarAway = YES;
+}
+
+- (void)didTap:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"QuestButtonTap" object:self.quest]];
 }
 
 @end

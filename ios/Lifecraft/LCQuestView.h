@@ -15,5 +15,6 @@
 @property (assign) BOOL isFarAway;
 
 - (void)setFarAway;
+- (void)didTap:(id)sender;
 
 @end

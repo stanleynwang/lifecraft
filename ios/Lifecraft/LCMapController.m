@@ -22,7 +22,7 @@
 @synthesize mapView;
 @synthesize overlay;
 
-@synthesize locationManager, lastLocation, quests, users;
+@synthesize locationManager, lastLocation, quests, users, questController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +38,8 @@
     [self setupCurrentUser];
     [self loadQuests];
     [self loadUsers];
+    
+    RNObserveNotification(@"QuestButtonTap", @selector(didTapQuest:));
 }
 
 - (void)setupMap {
@@ -139,6 +141,17 @@
         [self positionView:view byDistance:quest.distance.integerValue];
         [self.overlay addSubview:view];
     }
+}
+
+- (void)didTapQuest:(NSNotification *)notif {
+    LCQuest *quest = (LCQuest *)notif.object;
+    
+    if (!self.questController) {
+        self.questController = [[LCQuestController alloc] initWithNibName:@"LCQuestController" bundle:nil];
+    }
+    
+    self.questController.quest = quest;
+    [self.navigationController pushViewController:self.questController animated:YES];
 }
 
 /*************************************************/

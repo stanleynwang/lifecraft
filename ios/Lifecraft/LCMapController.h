@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "LCQuestController.h"
 
 @interface LCMapController : UIViewController <CLLocationManagerDelegate>
 
@@ -20,6 +21,8 @@
 
 @property (strong) NSArray *users;
 
+@property (strong) LCQuestController *questController;
+
 
 - (void)setupMap;
 // Shows current user's avatar
@@ -31,6 +34,7 @@
 #pragma mark - Quests
 - (void)loadQuests;
 - (void)displayQuests;
+- (void)didTapQuest:(NSNotification *)notif;
 
 #pragma mark - Users
 - (void)loadUsers;
