@@ -1,5 +1,6 @@
 require 'mechanize'
 require 'peach'
+require 'cgi'
 
 class Scraper::SanFranciscoEvents
   Scraper::SCRAPERS << self
@@ -88,9 +89,9 @@ class Scraper::SanFranciscoEvents
       spans = desc.search('span')
 
       if spans.size == 0
-        desc.inner_text
+        CGI.unescapeHTML(desc.inner_text)
       else
-        spans[0].inner_text.strip + spans[-2].inner_text.strip
+        CGI.unescapeHTML(spans[0].inner_text.strip + spans[-2].inner_text.strip)
       end
     end
 
