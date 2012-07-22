@@ -18,7 +18,6 @@ class Api::UserSessionsController < ApplicationController
       @user.save
     end
 
-
     @user_session = UserSession.new(user_params)
     render :json => @user
   end

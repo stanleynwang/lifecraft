@@ -1,5 +1,12 @@
+# User
+# email:string
+# password:string (NOT USED!!!)
+# level:integer
+# experience:integer
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
+  has_many :quests
+  belongs_to :current_quest, :class_name => "Quest"
 
   acts_as_authentic do |c|
   end

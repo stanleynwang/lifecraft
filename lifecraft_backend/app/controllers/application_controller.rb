@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
+
+      Rails.logger.debug "\033[33m#{@current_user_session.inspect}\033[0m"
+      @current_user_session
     end
 
     def current_user

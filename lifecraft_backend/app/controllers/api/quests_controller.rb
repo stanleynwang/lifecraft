@@ -1,31 +1,38 @@
 class Api::QuestsController < ApplicationController
-  def new
-    sesh = current_user_session
-    sesh.current_quest = Quest.new
-    sesh.current_quest.user = current_user
-    sesh.current_quest.activity = Activity.find(params[:activity_id])
 
-    render :text => sesh.instance_variables
-    #render :text => "{success: true}"
+  # this should probably be create by definition of what we are doing... :|
+  def new
+    @quest = Quest.new
+
+    @quest.user = current_user
+    @quest.activity = Activity.find(params[:activity_id])
+    @quest.save
+
+    current_user.current_quest = @quest
+    current_user.save
+
+    render :json => @quest
   end
 
   def show
-    sesh = current_user_session
-    if not sesh.nil?
-      render :text => sesh.instance_variables
-      #render :json => sesh.current_quest
+    if not params[:id].nil?
+      @quest = (params[:id] == 'current_user' ? current_user.current_quest : Quest.find(params[:id]))
+      render :json => (!@quest.nil? ? @quest : {:notice => "no current quest"})
     else
-      render :text => "{success: false}"
+      render :json => {:notice => "need :id or 'current_user'"}
     end
   end
 
   def complete_quest
-    sesh = current_user_session
-    if not sesh.nil?
-      sesh.current_quest = nil
-      user = current_user
-      user.experience += 10 if !user.nil? && !user.experience.nil?
-      user.save
+    @user  = current_user
+    @quest = @user.current_quest
+    if not @quest.nil?
+      @user.experience += 10
+      @user.current_quest = nil
+      @user.save
+      render :json => {:success => true}
+    else
+      render :json => {:success => false}
     end
   end
 end

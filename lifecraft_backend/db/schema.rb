@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120722065239) do
+ActiveRecord::Schema.define(:version => 20120722113806) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(:version => 20120722065239) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "url"
+  end
+
+  create_table "quests", :force => true do |t|
+    t.integer "user_id"
+    t.integer "activity_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -46,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20120722065239) do
     t.string   "persistence_token", :default => "", :null => false
     t.integer  "experience",        :default => 0,  :null => false
     t.integer  "level",             :default => 1,  :null => false
+    t.integer  "current_quest_id"
   end
 
 end
