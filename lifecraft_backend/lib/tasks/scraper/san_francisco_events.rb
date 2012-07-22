@@ -74,12 +74,12 @@ class Scraper::SanFranciscoEvents
     end
 
     def start_time
-      Date.parse(@page.search('.dtstart').first['title'])
+      DateTime.parse(@page.search('.dtstart').first['title'])
     end
 
     def end_time
       e = @page.search('.dtend').first
-      e ? Date.parse(e['title']) : e
+      e ? DateTime.parse(e['title']) : e
     end
 
     def description
