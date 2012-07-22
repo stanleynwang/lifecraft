@@ -49,6 +49,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self loadQuests];
     [self loadUser];
+    [self showLastLocation];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self showLastLocation];
 }
 
 - (void)setupMap {
@@ -110,7 +115,11 @@
     
     // Zoom there
     
-    MKMapPoint point = MKMapPointForCoordinate(newLocation.coordinate);
+    [self showLastLocation];
+}
+
+- (void)showLastLocation {
+    MKMapPoint point = MKMapPointForCoordinate(self.lastLocation.coordinate);
     point.x -= 5000;
     point.y -= 9000;
     MKMapRect rect = MKMapRectMake(point.x, point.y, 10000, 10000);

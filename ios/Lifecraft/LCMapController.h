@@ -33,6 +33,7 @@
 // Shows current user's avatar
 - (void)login:(LCUser *)user;
 - (void)setupCurrentUser;
+- (void)showLastLocation;
 
 #pragma mark - Displaying helpers
 - (void)positionView:(UIView *)view byDistance:(NSInteger)distance;
