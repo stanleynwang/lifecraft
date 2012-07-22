@@ -74,22 +74,22 @@ class Scraper::SanFranciscoEvents
     end
 
     def title
-      @page.search('h1.name span.summary').first.inner_text
+      @page.css('h1.name span.summary').first.inner_text
     end
 
     def start_time
-      DateTime.parse(@page.search('.dtstart').first['title'])
+      DateTime.parse(@page.css('.dtstart').first['title'])
     end
 
     def end_time
-      e = @page.search('.dtend').first
+      e = @page.css('.dtend').first
       e ? DateTime.parse(e['title']) : e
     end
 
     def description
-      desc = @page.search('.description p').first
+      desc = @page.css('.description p').first
       return nil if not desc
-      spans = desc.search('span')
+      spans = desc.css('span')
 
       if spans.size == 0
         CGI.unescapeHTML(desc.inner_text)
