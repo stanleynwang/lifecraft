@@ -16,7 +16,7 @@
 @synthesize user;
 
 - (id)initWithFrame:(CGRect)frame {
-    frame.size = CGSizeMake(50, 80);
+    frame.size = CGSizeMake(50, 50);
     
     self = [super initWithFrame:frame];
     if (self) {
@@ -36,14 +36,14 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSLog(@"%@", url);
     
+    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Circle"]];
     
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 49, 49)];
     [image setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
   
 //    CGRect frame = image.frame;
 //    frame.origin = CGPointMake(0, 0);
 //    image.frame = frame;
-
     
     [self addSubview:image];
     

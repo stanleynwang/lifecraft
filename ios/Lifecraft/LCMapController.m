@@ -90,17 +90,17 @@
 
 #pragma mark - Helpers
 - (void)positionView:(UIView *)view byDistance:(NSInteger)distance {
-    CGFloat maxY = 300;
-    NSInteger maxX = 320;
-    
-    CGFloat x = (arc4random() % (maxX-10)) - 20;
-    
-    if (distance > 78) {
-        distance = 78;
+    if (distance > 100) {
+        distance = 100;
         [view performSelector:@selector(setFarAway)];
     }
     
-    CGFloat y = maxY - (((CGFloat)distance)/100 * maxY) - 60;
+    static int _x_v = 0;
+    
+    CGFloat x = (_x_v++) * 60 + 5;
+    if (_x_v > 4) _x_v = 0;
+    CGFloat y = (100-distance) * 2.2 + 5;
+    
     NSLog(@"%f %f", x, y);
     
     
@@ -151,14 +151,14 @@
     user1.level = [NSNumber numberWithInt:4];
     user1.email = @"kourge@gmail.com";
     user1.experience = [NSNumber numberWithInt:1000];
-    user1.distance = [NSNumber numberWithInt:30];
+    user1.distance = [NSNumber numberWithInt:0];
     
     LCUser *user2 = [[LCUser alloc] init];
     user2.name = @"Mahhh";
     user2.level = [NSNumber numberWithInt:3];
     user2.email = @"mahhaha@gmail.com";
     user2.experience = [NSNumber numberWithInt:700];
-    user2.distance = [NSNumber numberWithInt:40];
+    user2.distance = [NSNumber numberWithInt:100];
     
     self.users = [NSArray arrayWithObjects:user1, user2, nil];
     [self displayUsers];
