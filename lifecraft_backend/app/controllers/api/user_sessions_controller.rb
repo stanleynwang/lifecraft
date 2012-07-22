@@ -13,7 +13,11 @@ class Api::UserSessionsController < ApplicationController
     user_params[:password_confirmation] = "derp"
 
     @user = User.find_by_email(user_params[:email])
-    (@user = User.new(user_params) and @user.save) if @user.nil?
+    if @user.nil?
+      @user = User.new(user_params)
+      @user.save
+    end
+
 
     @user_session = UserSession.new(user_params)
     render :json => @user
