@@ -31,21 +31,20 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setupMap];
+        
+        RNObserveNotification(@"QuestButtonTap", @selector(didTapQuest:));
+        
+        self.bar = [[LCNavigationBar alloc] initWithFrame:CGRectMake(0, 371, 320, 80)];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.bar = [[LCNavigationBar alloc] initWithFrame:CGRectMake(0, 371, 320, 80)];
     [self.overlay addSubview:self.bar];
     
-    [self setupCurrentUser];
     [self loadQuests];
     [self loadUsers];
-    
-    RNObserveNotification(@"QuestButtonTap", @selector(didTapQuest:));
-
 }
 
 - (void)setupMap {
@@ -58,34 +57,44 @@
     self.mapView.showsUserLocation = YES;
 }
 
-- (void)setupCurrentUser {
-    LCUser *user1 = [[LCUser alloc] init];
-    user1.name = @"vojto";
-    user1.level = [NSNumber numberWithInt:4];
-    user1.email = @"vojto@rinik.net";
-    user1.experience = [NSNumber numberWithInt:1000];
-    user1.distance = [NSNumber numberWithInt:0];
-    self.bar.user = user1;
+- (void)login:(LCUser *)user {
+    NSLog(@"Logged in as %@", user);
+    
+    NSLog(@"self.bar = %@", self.bar);
+    NSLog(@"self.overla = %@", self.overlay);
+    
+    self.bar.user = user;
     [self.bar layoutSubviews];
     
-    UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(135, 305, 50, 50)];
-    avatar.backgroundColor = [UIColor redColor];
-    UIImage *placeholder = [UIImage imageNamed:@"placeholder.jpg"];
-//    avatar.image = placeholder;
-    [avatar setImageWithURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/1740f056b79158cc9c8c287bb32573e5"] placeholderImage:placeholder];
+    LCUserView *view = [[LCUserView alloc] initWithFrame:CGRectMake(135, 305, 50, 50)];
+    view.user = user;
+    [self.overlay addSubview:view];
+    
+}
 
-    [self.overlay addSubview:avatar];
+- (void)didLogin:(NSNotification *)notif {
     
-    CALayer* maskLayer = [CALayer layer];
-    maskLayer.frame = CGRectMake(0,0, 50, 50);
-    maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"Mask.png"] CGImage];
-    
-    // Apply the mask to your uiview layer
-    avatar.layer.mask = maskLayer;
-    
-//    avatar.layer.shadowColor = [UIColor blackColor].CGColor;
-//    avatar.layer.shadowOffset = CGSizeMake(5.0, 5.0);
-//    avatar.layer.shadowRadius = 3.0;
+    /*
+     
+     UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(135, 305, 50, 50)];
+     avatar.backgroundColor = [UIColor redColor];
+     UIImage *placeholder = [UIImage imageNamed:@"placeholder.jpg"];
+     //    avatar.image = placeholder;
+     [avatar setImageWithURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/1740f056b79158cc9c8c287bb32573e5"] placeholderImage:placeholder];
+     
+     [self.overlay addSubview:avatar];
+     
+     CALayer* maskLayer = [CALayer layer];
+     maskLayer.frame = CGRectMake(0,0, 50, 50);
+     maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"Mask.png"] CGImage];
+     
+     // Apply the mask to your uiview layer
+     avatar.layer.mask = maskLayer;
+     
+     */
+}
+
+- (void)setupCurrentUser {
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

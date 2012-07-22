@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "LCQuestController.h"
 #import "LCNavigationBar.h"
+#import "LCUser.h"
 
 @interface LCMapController : UIViewController <CLLocationManagerDelegate>
 
@@ -29,6 +30,7 @@
 
 - (void)setupMap;
 // Shows current user's avatar
+- (void)login:(LCUser *)user;
 - (void)setupCurrentUser;
 
 #pragma mark - Displaying helpers

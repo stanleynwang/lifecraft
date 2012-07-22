@@ -9,4 +9,5 @@
 #import <MapKit/MapKit.h>
 
 #define RNPostNotification(name) [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:name object:nil]]
+#define RNPostNotificationWithObject(name,obj) [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:name object:obj]]
 #define RNObserveNotification(notifName,sel) [[NSNotificationCenter defaultCenter] addObserver:self selector:sel name:notifName object:nil]

@@ -52,6 +52,7 @@
 
 - (void)didLogin:(NSNotification *)notif {
     [self.navigationController pushViewController:self.map animated:YES];
+    [self.map login:(LCUser *)notif.object];
 }
 
 @end
