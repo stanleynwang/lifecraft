@@ -19,10 +19,16 @@
 		99066D6815BB988B0034528D /* Bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99066D6715BB988B0034528D /* Bar@2x.png */; };
 		99066D6A15BB9AC90034528D /* Level@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99066D6915BB9AC90034528D /* Level@2x.png */; };
 		99066D6D15BB9C380034528D /* LCDataContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D6C15BB9C380034528D /* LCDataContext.m */; };
-		99066D6F15BBA0560034528D /* Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99066D6E15BBA0560034528D /* Button@2x.png */; };
 		99066D7315BBA0FA0034528D /* LCQuestsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D7115BBA0FA0034528D /* LCQuestsList.m */; };
 		99066D7415BBA0FA0034528D /* LCQuestsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99066D7215BBA0FA0034528D /* LCQuestsList.xib */; };
 		99066D7E15BBA21A0034528D /* LCQuestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D7D15BBA21A0034528D /* LCQuestCell.m */; };
+		9922790E15BC42DD004B9F6B /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922790D15BC42DD004B9F6B /* Background@2x.png */; };
+		9922791215BC433F004B9F6B /* InputBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791015BC433F004B9F6B /* InputBackground@2x.png */; };
+		9922791315BC433F004B9F6B /* InputBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791115BC433F004B9F6B /* InputBackground.png */; };
+		9922791615BC43E9004B9F6B /* Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791415BC43E9004B9F6B /* Button@2x.png */; };
+		9922791715BC43E9004B9F6B /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791515BC43E9004B9F6B /* Button.png */; };
+		9922791915BC461E004B9F6B /* BottomBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791815BC461E004B9F6B /* BottomBar@2x.png */; };
+		9922791B15BC46E4004B9F6B /* BarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791A15BC46E4004B9F6B /* BarButton@2x.png */; };
 		993A060915BB751B00EB93FF /* Quest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993A060815BB751B00EB93FF /* Quest@2x.png */; };
 		995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C7E9E15BB5B630066D8D5 /* LCMapController.m */; };
 		995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995C7E9F15BB5B630066D8D5 /* LCMapController.xib */; };
@@ -64,12 +70,18 @@
 		99066D6915BB9AC90034528D /* Level@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level@2x.png"; sourceTree = "<group>"; };
 		99066D6B15BB9C380034528D /* LCDataContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataContext.h; sourceTree = "<group>"; };
 		99066D6C15BB9C380034528D /* LCDataContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataContext.m; sourceTree = "<group>"; };
-		99066D6E15BBA0560034528D /* Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button@2x.png"; sourceTree = "<group>"; };
 		99066D7015BBA0FA0034528D /* LCQuestsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuestsList.h; sourceTree = "<group>"; };
 		99066D7115BBA0FA0034528D /* LCQuestsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuestsList.m; sourceTree = "<group>"; };
 		99066D7215BBA0FA0034528D /* LCQuestsList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCQuestsList.xib; sourceTree = "<group>"; };
 		99066D7C15BBA2190034528D /* LCQuestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuestCell.h; sourceTree = "<group>"; };
 		99066D7D15BBA21A0034528D /* LCQuestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuestCell.m; sourceTree = "<group>"; };
+		9922790D15BC42DD004B9F6B /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
+		9922791015BC433F004B9F6B /* InputBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InputBackground@2x.png"; sourceTree = "<group>"; };
+		9922791115BC433F004B9F6B /* InputBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InputBackground.png; sourceTree = "<group>"; };
+		9922791415BC43E9004B9F6B /* Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button@2x.png"; sourceTree = "<group>"; };
+		9922791515BC43E9004B9F6B /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
+		9922791815BC461E004B9F6B /* BottomBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BottomBar@2x.png"; sourceTree = "<group>"; };
+		9922791A15BC46E4004B9F6B /* BarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BarButton@2x.png"; sourceTree = "<group>"; };
 		993A060815BB751B00EB93FF /* Quest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quest@2x.png"; sourceTree = "<group>"; };
 		995C7E9D15BB5B630066D8D5 /* LCMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMapController.h; sourceTree = "<group>"; };
 		995C7E9E15BB5B630066D8D5 /* LCMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMapController.m; sourceTree = "<group>"; };
@@ -239,7 +251,13 @@
 				99066D4315BB89970034528D /* Circle@2x.png */,
 				99066D6715BB988B0034528D /* Bar@2x.png */,
 				99066D6915BB9AC90034528D /* Level@2x.png */,
-				99066D6E15BBA0560034528D /* Button@2x.png */,
+				9922790D15BC42DD004B9F6B /* Background@2x.png */,
+				9922791015BC433F004B9F6B /* InputBackground@2x.png */,
+				9922791115BC433F004B9F6B /* InputBackground.png */,
+				9922791415BC43E9004B9F6B /* Button@2x.png */,
+				9922791515BC43E9004B9F6B /* Button.png */,
+				9922791815BC461E004B9F6B /* BottomBar@2x.png */,
+				9922791A15BC46E4004B9F6B /* BarButton@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -320,9 +338,15 @@
 				99066D5815BB91540034528D /* LCQuestController.xib in Resources */,
 				99066D6815BB988B0034528D /* Bar@2x.png in Resources */,
 				99066D6A15BB9AC90034528D /* Level@2x.png in Resources */,
-				99066D6F15BBA0560034528D /* Button@2x.png in Resources */,
 				99066D7415BBA0FA0034528D /* LCQuestsList.xib in Resources */,
 				99D57E7915BBB3EA00B79F22 /* LCLoginController.xib in Resources */,
+				9922790E15BC42DD004B9F6B /* Background@2x.png in Resources */,
+				9922791215BC433F004B9F6B /* InputBackground@2x.png in Resources */,
+				9922791315BC433F004B9F6B /* InputBackground.png in Resources */,
+				9922791615BC43E9004B9F6B /* Button@2x.png in Resources */,
+				9922791715BC43E9004B9F6B /* Button.png in Resources */,
+				9922791915BC461E004B9F6B /* BottomBar@2x.png in Resources */,
+				9922791B15BC46E4004B9F6B /* BarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
