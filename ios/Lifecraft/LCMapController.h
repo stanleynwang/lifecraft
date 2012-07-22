@@ -44,6 +44,11 @@
 
 #pragma mark - Users
 - (void)loadUsers;
+- (void)loadUser;
 - (void)displayUsers;
+
+- (void)ding;
+- (void)displayDing;
+- (void)explode;
 
 @end

@@ -16,4 +16,6 @@
 @property (strong) NSNumber *experience;
 @property (strong) NSNumber *distance;
 
++ (LCUser *)userFromData:(NSDictionary *)data;
+
 @end

@@ -12,4 +12,13 @@
 
 @synthesize name, email, level, experience, distance;
 
++ (LCUser *)userFromData:(NSDictionary *)data {
+    LCUser *user = [[LCUser alloc] init];
+    user.name = [data objectForKey:@"nickname"];
+    user.email = [data objectForKey:@"email"];
+    user.level = [data objectForKey:@"level"];
+    user.experience = [data objectForKey:@"experience"];
+    return user;
+}
+
 @end
