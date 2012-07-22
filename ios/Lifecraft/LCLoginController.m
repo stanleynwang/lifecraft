@@ -44,5 +44,9 @@
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    self.email.text = @"vojto@rinik.net";
+}
+
 
 @end

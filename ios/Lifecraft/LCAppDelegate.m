@@ -33,8 +33,8 @@
     RNObserveNotification(@"didLogin", @selector(didLogin:));
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Bar"] forBarMetrics:UIBarMetricsDefault];
-    UIImage *button = [[UIImage imageNamed:@"Button"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
-    [[UIBarButtonItem appearance] setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    UIImage *button = [[UIImage imageNamed:@"BackButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 10)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     return YES;
 }
