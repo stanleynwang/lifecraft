@@ -1,5 +1,5 @@
 Lifecraft::Application.routes.draw do
-  root :to => 'users#new'
+  root :to => 'welcome#index'
   # Users
   resources :users
   resource :user, :as => :account
