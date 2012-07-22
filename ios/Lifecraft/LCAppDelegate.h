@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LCNavigationBar.h"
 
 @interface LCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong) LCNavigationBar *navigationBar;
+
+- (void)loadCurrentUser;
 
 @end

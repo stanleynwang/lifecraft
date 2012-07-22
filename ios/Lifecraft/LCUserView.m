@@ -16,8 +16,6 @@
 @synthesize user;
 
 - (id)initWithFrame:(CGRect)frame {
-    frame.size = CGSizeMake(50, 50);
-    
     self = [super initWithFrame:frame];
     if (self) {
         
@@ -36,9 +34,8 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSLog(@"%@", url);
     
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Circle"]];
-    
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 49, 49)];
+
+    UIImageView *image = [[UIImageView alloc] initWithFrame:self.bounds];
     [image setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
   
 //    CGRect frame = image.frame;
@@ -48,7 +45,7 @@
     [self addSubview:image];
     
     CALayer* maskLayer = [CALayer layer];
-    maskLayer.frame = CGRectMake(0,0, 50, 50);
+    maskLayer.frame = self.bounds;
     maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"Mask.png"] CGImage];
     
     // Apply the mask to your uiview layer
