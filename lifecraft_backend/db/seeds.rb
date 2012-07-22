@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Scraper.activities_for_day(Date.today).each do |item|
+  item.delete(:source)
+  Activity.new(item).save
+end
+

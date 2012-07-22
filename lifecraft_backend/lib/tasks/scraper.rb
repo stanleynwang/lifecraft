@@ -1,11 +1,12 @@
+require 'peach'
 
 module Scraper
   SCRAPERS = []
 
-  def self.activity_for_day(date)
+  def self.activities_for_day(date)
     result = []
 
-    SCRAPERS.each do |scraper|
+    SCRAPERS.peach do |scraper|
       scraper = scraper.new(date)
       result.push(*scraper.scrape!)
     end
@@ -15,4 +16,5 @@ module Scraper
 end
 
 require 'scraper/san_francisco_events'
+require 'scraper/sf_gate'
 
