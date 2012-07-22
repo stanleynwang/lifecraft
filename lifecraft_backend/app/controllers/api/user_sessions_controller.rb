@@ -9,13 +9,14 @@ class Api::UserSessionsController < ApplicationController
   def create
     user_params = {}
     user_params[:email] = params[:email]
-    user_params[:password] = params[:password]
+    user_params[:password] = "derp"
+    user_params[:password_confirmation] = "derp"
+
+    @user = User.find_by_email(user_params[:email])
+    (@user = User.new(user_params) and @user.save) if @user.nil?
+
     @user_session = UserSession.new(user_params)
-    if @user_session.save
-      render :text => "{success: true}"
-    else
-      render :text => "{success: false}"
-    end
+    render :json => @user
   end
 
   def destroy

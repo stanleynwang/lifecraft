@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
     # password_confirmation
     user_params = {}
     user_params[:email] = params[:email]
-    user_params[:password] = params[:password]
+    user_params[:password] = "derp"
     user_params[:password_confirmation] = params[:password_confirmation]
     @user = User.new(user_params)
 
