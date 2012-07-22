@@ -40,3 +40,4 @@ gem 'authlogic'
 
 gem 'mechanize'
 gem 'rest-client', '~> 1.6.7'
+gem 'peach'
