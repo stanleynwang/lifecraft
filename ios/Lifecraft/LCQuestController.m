@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFJSONUtilities.h>
 #import "LCQuestController.h"
 
 @interface LCQuestController ()
@@ -33,7 +35,21 @@
 }
 
 - (IBAction)accept:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"Accepting quest: %@", self.quest);
+    
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
+                            [NSURL URLWithString:@"http://192.168.0.126:9001/"]];
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:quest.identifier, @"activity_id", nil];
+    
+    [client getPath:@"/api/quest/new" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Accepting quest succeeded... %@", responseObject);
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Request failed %@", error);
+    }];
+
 }
 
 - (IBAction)hide:(id)sender {

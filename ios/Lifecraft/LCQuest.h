@@ -15,6 +15,7 @@
 @property (strong) NSString *text;
 @property (strong) CLLocation *location;
 @property (strong) NSNumber *experience;
+@property (strong) NSString *identifier;
 
 + (NSArray *)questsFromResponse:(NSArray *)data;
 

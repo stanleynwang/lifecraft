@@ -10,7 +10,7 @@
 
 @implementation LCQuest
 
-@synthesize distance, title, text, location, experience;
+@synthesize distance, title, text, location, experience, identifier;
 
 + (NSArray *)questsFromResponse:(NSArray *)data {
     NSMutableArray *quests = [NSMutableArray array];
@@ -36,6 +36,8 @@
     longitude:longi];
         
         quest.text = [item objectForKey:@"description"];
+        
+        quest.identifier = [NSString stringWithFormat:@"%@", [item objectForKey:@"id"]];
         
         [quests addObject:quest];
     }
