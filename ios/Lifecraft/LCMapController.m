@@ -145,6 +145,7 @@
 
 - (void)didTapQuest:(NSNotification *)notif {
     LCQuest *quest = (LCQuest *)notif.object;
+    NSLog(@"Tapped quest %@", quest.title);
     
     if (!self.questController) {
         self.questController = [[LCQuestController alloc] initWithNibName:@"LCQuestController" bundle:nil];

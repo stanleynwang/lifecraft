@@ -19,7 +19,7 @@
 @synthesize experience;
 @synthesize text;
 
-- (void)viewDidLoad {
+- (void)viewWillAppear:(BOOL)animated {
     self.titleLabel.text = self.quest.title;
     self.experience = [NSString stringWithFormat:@"Experience: %@", self.quest.experience];
     self.text.text = self.quest.text;

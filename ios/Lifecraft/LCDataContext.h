@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LCQuest.h"
 
 @interface LCDataContext : NSObject
+
++ (LCDataContext *)instance;
+
 
 @end
