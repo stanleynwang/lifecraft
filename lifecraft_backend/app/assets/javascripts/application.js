@@ -134,6 +134,7 @@ $(function() {
       } else {
         var $userInfo = $.tmpl('userInfo', data.user);
         $('form.signin').replaceWith($userInfo);
+        Lifecraft.getQuests();
       }
     } else {
       $fullProgressbar.replaceWith($('<div class="alert alert-error">').html(
