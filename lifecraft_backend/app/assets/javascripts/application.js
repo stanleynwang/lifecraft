@@ -61,11 +61,29 @@ var Lifecraft = (function() {
     return _clone(_user);
   }
 
+  function getQuests() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function(pos) {
+        _fetchQuests(pos.coords.latitude, pos.coords.longitude);
+      });
+    } else {
+      _fetchQuests(37.7763776, -122.3918969);
+    }
+  }
+
+  function _fetchQuests(lat, long) {
+    var date = new Date().strftime('%Y-%m-%d');
+    $.getJSON('/api/activity/find/' + date, {lat: lat, long: long}, function(data) {
+      $(document).trigger('quests:fetched', {quests: data});
+    });
+  }
+
   return {
     signin: signin,
     signout: signout,
     isSignedIn: isSignedIn,
-    getUser: getUser
+    getUser: getUser,
+    getQuests: getQuests
   };
 })();
 window.Lifecraft = Lifecraft;
@@ -133,6 +151,10 @@ $(function() {
       $('form.signin').submit();
     }
   });
+
+  $(document).on('quests:fetched', function(event, data) {
+    console.log(data);
+  }
 });
 
 })(jQuery, window);
