@@ -142,7 +142,7 @@
     // Stub some quests
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
-                            [NSURL URLWithString:@"http://192.168.0.126:9001/"]];
+                            [NSURL URLWithString:URL]];
 
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"YY-MM-dd"];

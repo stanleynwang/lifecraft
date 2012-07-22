@@ -38,7 +38,7 @@
     NSLog(@"Accepting quest: %@", self.quest);
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
-                            [NSURL URLWithString:@"http://192.168.0.126:9001/"]];
+                            [NSURL URLWithString:URL]];
     
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:quest.identifier, @"activity_id", nil];
     

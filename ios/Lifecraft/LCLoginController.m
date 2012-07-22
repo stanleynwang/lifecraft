@@ -27,7 +27,7 @@
                             nil];
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
-                            [NSURL URLWithString:@"http://192.168.0.126:9001/"]];
+                            [NSURL URLWithString:URL]];
     
     [client postPath:@"/api/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *data = AFJSONDecode(responseObject, nil);

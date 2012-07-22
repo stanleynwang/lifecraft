@@ -13,6 +13,8 @@
 
 @property (strong) NSArray *quests;
 
+- (void)loadQuests;
+
 - (UITableViewCell *)prepareCell:(Class)klass identifier:(NSString *)identifier tableView:(UITableView *)tableView;
 
 @end
