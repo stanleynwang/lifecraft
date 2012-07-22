@@ -2,7 +2,10 @@ class WelcomeController < ApplicationController
   def index
   end
 
+  def about
+  end
+
   def _about
-    render :layout => false
+    render :action => :about, :layout => false
   end
 end
