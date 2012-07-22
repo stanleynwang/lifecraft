@@ -38,7 +38,7 @@ class Scraper::SfGate
 
   def scrape!
     url = uri(:when => self.date).to_s
-    Nokogiri::XML(RestClient.get(url)).search('item').pmap do |item|
+    Nokogiri::XML(RestClient.get(url)).css('item').pmap do |item|
       hash = Item.new(item).to_hash
       hash[:source] = self.class
       hash
@@ -74,7 +74,27 @@ class Scraper::SfGate
     end
 
     def url
-      @node.search('link').first.inner_text
+      @node.css('link').first.inner_text
+    end
+
+    def address
+      parts = {}
+
+      %w(street city region postalcode).each do |part|
+        parts[:"#{part}"] = @node.xpath(
+          ".//xCal:x-calconnect-#{part}", @node.namespaces
+        ).first.inner_text
+      end
+
+      "#{parts[:street]}, #{parts[:city]}, #{parts[:region]} #{parts[:postalcode]}"
+    end
+
+    def lat
+      @node.xpath('.//geo:lat', @node.namespaces).first.inner_text.to_f
+    end
+
+    def long
+      @node.xpath('.//geo:long', @node.namespaces).first.inner_text.to_f
     end
 
     def to_hash
@@ -83,7 +103,10 @@ class Scraper::SfGate
         :description => description,
         :url => url,
         :start_time => start_time,
-        :end_time => end_time
+        :end_time => end_time,
+        :address => address,
+        :lat => lat,
+        :long => long
       }
     end
   end

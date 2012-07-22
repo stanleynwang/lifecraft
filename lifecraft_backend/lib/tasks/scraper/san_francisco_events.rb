@@ -74,20 +74,20 @@ class Scraper::SanFranciscoEvents
     end
 
     def title
-      @page.css('h1.name span.summary').first.inner_text
+      @page.search('h1.name span.summary').first.inner_text
     end
 
     def start_time
-      DateTime.parse(@page.css('.dtstart').first['title'])
+      DateTime.parse(@page.search('.dtstart').first['title'])
     end
 
     def end_time
-      e = @page.css('.dtend').first
+      e = @page.search('.dtend').first
       e ? DateTime.parse(e['title']) : e
     end
 
     def description
-      desc = @page.css('.description p').first
+      desc = @page.search('.description p').first
       return nil if not desc
       spans = desc.css('span')
 
@@ -98,12 +98,24 @@ class Scraper::SanFranciscoEvents
       end
     end
 
+    def address
+      addr = @page.search('#event_map_address').first
+      parts = {}
+
+      %w(street-address locality region postal-code).each do |part|
+        parts[part] = addr.css(".#{part}").first.inner_text
+      end
+
+      "#{parts['street-address']}, #{parts['locality']}, #{parts['region']} #{parts['postal-code']}"
+    end
+
     def to_hash
       {
         :title => title,
         :description => description,
         :start_time => start_time,
         :end_time => end_time,
+        :address => address,
         :url => @url
       }
     end
