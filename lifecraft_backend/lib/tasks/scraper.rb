@@ -1,3 +1,4 @@
+require 'peach'
 
 module Scraper
   SCRAPERS = []
@@ -5,7 +6,7 @@ module Scraper
   def self.activity_for_day(date)
     result = []
 
-    SCRAPERS.each do |scraper|
+    SCRAPERS.peach do |scraper|
       scraper = scraper.new(date)
       result.push(*scraper.scrape!)
     end
