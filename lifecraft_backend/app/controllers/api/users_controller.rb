@@ -24,6 +24,7 @@ class Api::UsersController < ApplicationController
     if !params[:id].nil?
       if params[:id] == 'current_user'
         @user = current_user
+      else
         @user = User.find(params[:id])
       end
     else
