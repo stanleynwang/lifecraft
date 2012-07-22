@@ -24,7 +24,7 @@
 @synthesize mapView;
 @synthesize overlay;
 
-@synthesize locationManager, lastLocation, quests, users, questController;
+@synthesize locationManager, lastLocation, quests, users, questController, questViews;
 @synthesize bar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,6 +36,7 @@
         RNObserveNotification(@"QuestButtonTap", @selector(didTapQuest:));
         
         self.bar = [[LCNavigationBar alloc] initWithFrame:CGRectMake(0, 371, 320, 80)];
+        self.questViews = [NSMutableArray array];
     }
     return self;
 }
@@ -43,9 +44,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.overlay addSubview:self.bar];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [self loadQuests];
-    [self loadUsers];
+    [self loadUser];
+    [self showLastLocation];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self showLastLocation];
 }
 
 - (void)setupMap {
@@ -107,7 +115,11 @@
     
     // Zoom there
     
-    MKMapPoint point = MKMapPointForCoordinate(newLocation.coordinate);
+    [self showLastLocation];
+}
+
+- (void)showLastLocation {
+    MKMapPoint point = MKMapPointForCoordinate(self.lastLocation.coordinate);
     point.x -= 5000;
     point.y -= 9000;
     MKMapRect rect = MKMapRectMake(point.x, point.y, 10000, 10000);
@@ -170,11 +182,17 @@
 }
 
 - (void)displayQuests {
+    for (UIView *view in self.questViews) {
+        [view removeFromSuperview];
+    }
+    [self.questViews removeAllObjects];
+    
     for (LCQuest *quest in self.quests) {
         LCQuestView *view = [[LCQuestView alloc] initWithFrame:CGRectZero];
         view.quest = quest;
         [self positionView:view byDistance:quest.distance.integerValue];
         [self.overlay addSubview:view];
+        [self.questViews addObject:view];
     }
 }
 
@@ -213,6 +231,33 @@
     [self displayUsers];
 }
 
+- (void)loadUser {
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
+                            [NSURL URLWithString:URL]];
+    
+    [client getPath:@"/api/users/current_user" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *data = AFJSONDecode(responseObject, nil);
+        LCUser *user = [LCUser userFromData:data];
+        
+        NSInteger previousLevel = self.bar.user.level.intValue;
+        NSInteger currentLevel = user.level.intValue;
+        
+        self.bar.user = user;
+        [self.bar layoutSubviews];
+        
+        NSLog(@"Comparing levels %d <> %d", previousLevel, currentLevel);
+        
+        if (previousLevel && currentLevel > previousLevel) {
+            NSLog(@"Ding!");
+            [self ding];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }];
+
+}
+
 - (void)displayUsers {
     for (LCUser *user in self.users) {
         LCUserView *view = [[LCUserView alloc] initWithFrame:CGRectZero];
@@ -221,5 +266,48 @@
         [self.overlay addSubview:view];
     }
 }
+
+- (void)ding {
+    [self performSelector:@selector(displayDing) withObject:nil afterDelay:0.5];
+}
+
+- (void)displayDing {
+    UIImage *image = [UIImage imageNamed:@"Ding"];
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 190, 190)];
+    label.text = [NSString stringWithFormat:@"%@", self.bar.user.level];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:150];
+    label.textColor = [UIColor colorWithRed:1.000 green:0.886 blue:0.247 alpha:1.];
+    label.textAlignment = UITextAlignmentCenter;
+    [view addSubview:label];
+
+    CGRect frame = view.frame;
+    frame.origin = CGPointMake(55, 50);
+    view.frame = frame;
+
+    [self.overlay addSubview:view];
+
+    view.transform = CGAffineTransformMakeScale(0.5, 0.5);
+
+    // YO DAWG...
+    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
+        view.transform = CGAffineTransformMakeScale(1.3, 1.3);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1 delay:0.0 options:0 animations:^{
+            CGAffineTransform t = CGAffineTransformMakeTranslation(-113, 252);
+            t = CGAffineTransformScale(t, 0.15, 0.15);
+            view.transform = t;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.2 delay:0.0 options:0 animations:^{
+                view.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                [view removeFromSuperview];
+            }];
+        }];
+    }];
+}
+
 
 @end

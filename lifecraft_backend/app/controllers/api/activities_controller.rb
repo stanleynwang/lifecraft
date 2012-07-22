@@ -12,6 +12,13 @@ class Api::ActivitiesController < ApplicationController
       location = [params[:lat].to_f, params[:long].to_f]
       radius = params[:radius] ? params[:radius].to_f : 1.5
       activities = Activity.near(location, radius).to_a
+      activities.reject! do |activity|
+        current_user.quests.reject { |x|
+          !x.completed
+        }.collect { |q|
+          q.activity.id
+        }.include?(activity.id)
+      end
       activities.map! do |activity|
         is_current = current_user.quests.collect { |q| q.activity.id }.include?(activity.id)
         data = activity.as_json

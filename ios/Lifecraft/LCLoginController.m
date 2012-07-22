@@ -31,11 +31,7 @@
     
     [client postPath:@"/api/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *data = AFJSONDecode(responseObject, nil);
-        LCUser *user = [[LCUser alloc] init];
-        user.name = [data objectForKey:@"nickname"];
-        user.email = [data objectForKey:@"email"];
-        user.level = [data objectForKey:@"level"];
-        user.experience = [data objectForKey:@"experience"];
+        LCUser *user = [LCUser userFromData:data];
         NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"Response: %@", text);
         RNPostNotificationWithObject(@"didLogin", user);

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *overlay;
 
 @property (strong) NSArray *quests;
+@property (strong) NSMutableArray *questViews;
 
 @property (strong) NSArray *users;
 
@@ -32,6 +33,7 @@
 // Shows current user's avatar
 - (void)login:(LCUser *)user;
 - (void)setupCurrentUser;
+- (void)showLastLocation;
 
 #pragma mark - Displaying helpers
 - (void)positionView:(UIView *)view byDistance:(NSInteger)distance;
@@ -43,6 +45,11 @@
 
 #pragma mark - Users
 - (void)loadUsers;
+- (void)loadUser;
 - (void)displayUsers;
+
+- (void)ding;
+- (void)displayDing;
+- (void)explode;
 
 @end
