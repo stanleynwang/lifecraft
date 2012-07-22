@@ -3,3 +3,6 @@
 .*.swp
 .*.swo
 .*.un~
+
+# Ignore Finder .DS_Store files
+.DS_Store
