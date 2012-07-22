@@ -21,7 +21,15 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    if !params[:id].nil?
+      if params[:id] == 'current_user'
+        @user = current_user
+        @user = User.find(params[:id])
+      end
+    else
+      @user = current_user
+    end
+
     render :json => @user
   end
 
