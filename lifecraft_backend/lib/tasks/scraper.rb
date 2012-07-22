@@ -3,7 +3,7 @@ require 'peach'
 module Scraper
   SCRAPERS = []
 
-  def self.activity_for_day(date)
+  def self.activities_for_day(date)
     result = []
 
     SCRAPERS.peach do |scraper|
