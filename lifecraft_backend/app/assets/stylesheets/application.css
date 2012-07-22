@@ -8,6 +8,38 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self
 */
+
+.navbar-inner {
+  background-image: -moz-linear-gradient(top, #B03121, #871102);
+  background-image: -ms-linear-gradient(top, #B03121, #871102);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#B03121), to(#871102));
+  background-image: -webkit-linear-gradient(top, #B03121, #871102);
+  background-image: -o-linear-gradient(top, #B03121, #871102);
+  background-image: linear-gradient(top, #B03121, #871102);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#B03121', endColorstr='#871102', GradientType=0);
+}
+
+.navbar .brand {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  height: 0;
+  padding-top: 40px;
+  width: 139px;
+  background-image: url(/assets/lifecraft-logo.png);
+  background-repeat: no-repeat;
+  margin: 0 10px 0 10px;
+  background-position: 5px 5px;
+}
+
+.navbar .nav > li > a {
+  color: #f7a2a2;
+}
+
+.navbar .nav .active > a, .navbar .nav .active > a:hover {
+  background-color: #651d14;
+}
+
