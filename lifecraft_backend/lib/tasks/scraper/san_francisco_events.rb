@@ -111,7 +111,7 @@ class Scraper::SanFranciscoEvents
 
     def to_hash
       {
-        :title => title,
+        :name => title,
         :description => description,
         :start_time => start_time,
         :end_time => end_time,

@@ -99,14 +99,14 @@ class Scraper::SfGate
 
     def to_hash
       {
-        :title => title,
+        :name => title,
         :description => description,
         :url => url,
         :start_time => start_time,
         :end_time => end_time,
         :address => address,
-        :lat => lat,
-        :long => long
+        :latitude => lat,
+        :longitude => long
       }
     end
   end
