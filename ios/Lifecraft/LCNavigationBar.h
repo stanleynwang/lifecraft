@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LCUser.h"
 
-@interface LCNavigationBar : UINavigationBar
+@interface LCNavigationBar : UIView
 
 @property (strong) LCUser *user;
+
+- (void)didTapButton:(id)sender;
 
 @end

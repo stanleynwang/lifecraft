@@ -13,7 +13,7 @@
 
 @implementation LCAppDelegate
 
-@synthesize window = _window, navigationBar;
+@synthesize window = _window, navigationController, questsList;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -23,28 +23,32 @@
     LCMapController *map = [[LCMapController alloc] initWithNibName:@"LCMapController" bundle:nil];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:map];
     
-    object_setClass(nav.navigationBar, [LCNavigationBar class]);
-    self.navigationBar = (LCNavigationBar *)nav.navigationBar;
+    self.navigationController = nav;
     
-    [self loadCurrentUser];
     
     self.window.rootViewController = nav;
+    
+    RNObserveNotification(@"didTapQuestsButton", @selector(didTapQuestsButton:));
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Bar"] forBarMetrics:UIBarMetricsDefault];
+    UIImage *button = [[UIImage imageNamed:@"Button"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    [[UIBarButtonItem appearance] setBackgroundImage:button forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    
     
     return YES;
 }
 
-- (void)loadCurrentUser {
-    LCUser *user1 = [[LCUser alloc] init];
-    user1.name = @"vojto";
-    user1.level = [NSNumber numberWithInt:4];
-    user1.email = @"vojto@rinik.net";
-    user1.experience = [NSNumber numberWithInt:1000];
-    user1.distance = [NSNumber numberWithInt:0];
-    
-    self.navigationBar.user = user1;
-    [self.navigationBar layoutSubviews];
-    
-    NSLog(@"%@", self.navigationBar);
+
+- (void)didTapQuestsButton:(NSNotification *)notif {
+    if (!self.questsList) {
+        self.questsList = [[LCQuestsList alloc] initWithNibName:@"LCQuestsList" bundle:nil];
+    }
+    if ([self.navigationController.viewControllers lastObject] == self.questsList) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self.navigationController pushViewController:self.questsList animated:YES];
+    }
 }
 
 @end

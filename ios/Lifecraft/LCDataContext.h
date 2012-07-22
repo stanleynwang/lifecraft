@@ -13,5 +13,4 @@
 
 + (LCDataContext *)instance;
 
-
 @end

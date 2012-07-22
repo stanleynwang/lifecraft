@@ -13,6 +13,7 @@
 #import "LCQuestView.h"
 #import "LCUser.h"
 #import "LCUserView.h"
+#import "LCNavigationBar.h"
 
 @interface LCMapController ()
 
@@ -23,6 +24,7 @@
 @synthesize overlay;
 
 @synthesize locationManager, lastLocation, quests, users, questController;
+@synthesize bar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,11 +37,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.bar = [[LCNavigationBar alloc] initWithFrame:CGRectMake(0, 371, 320, 80)];
+    [self.overlay addSubview:self.bar];
+    
     [self setupCurrentUser];
     [self loadQuests];
     [self loadUsers];
     
     RNObserveNotification(@"QuestButtonTap", @selector(didTapQuest:));
+
 }
 
 - (void)setupMap {
@@ -53,6 +59,15 @@
 }
 
 - (void)setupCurrentUser {
+    LCUser *user1 = [[LCUser alloc] init];
+    user1.name = @"vojto";
+    user1.level = [NSNumber numberWithInt:4];
+    user1.email = @"vojto@rinik.net";
+    user1.experience = [NSNumber numberWithInt:1000];
+    user1.distance = [NSNumber numberWithInt:0];
+    self.bar.user = user1;
+    [self.bar layoutSubviews];
+    
     UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(135, 305, 50, 50)];
     avatar.backgroundColor = [UIColor redColor];
     UIImage *placeholder = [UIImage imageNamed:@"placeholder.jpg"];

@@ -48,9 +48,21 @@
     
     [self addSubview:level];
     
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(225, 3, 90, 36)];
+    [button addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundImage:[UIImage imageNamed:@"Button.png"] forState:UIControlStateNormal];
+    [button setTitle:@"Quests" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    [self addSubview:button];
+    
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    view.backgroundColor = [UIColor redColor];
 //    [self addSubview:view];
+}
+
+- (void)didTapButton:(id)sender {
+    RNPostNotification(@"didTapQuestsButton");
 }
 
 @end

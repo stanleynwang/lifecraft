@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "LCNavigationBar.h"
+#import "LCQuestsList.h"
 
 @interface LCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong) LCNavigationBar *navigationBar;
+@property (strong) UINavigationController *navigationController;
+@property (strong) LCQuestsList *questsList;
 
 - (void)loadCurrentUser;
+- (void)didTapQuestsButton:(NSNotification *)notif;
 
 @end

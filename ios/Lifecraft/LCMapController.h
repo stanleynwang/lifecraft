@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "LCQuestController.h"
+#import "LCNavigationBar.h"
 
 @interface LCMapController : UIViewController <CLLocationManagerDelegate>
 
@@ -22,6 +23,8 @@
 @property (strong) NSArray *users;
 
 @property (strong) LCQuestController *questController;
+
+@property (strong) LCNavigationBar *bar;
 
 
 - (void)setupMap;
