@@ -30,6 +30,8 @@
 		9922791915BC461E004B9F6B /* BottomBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791815BC461E004B9F6B /* BottomBar@2x.png */; };
 		9922791B15BC46E4004B9F6B /* BarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791A15BC46E4004B9F6B /* BarButton@2x.png */; };
 		9922791D15BC4B95004B9F6B /* BackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791C15BC4B95004B9F6B /* BackButton@2x.png */; };
+		9922791F15BC4F3F004B9F6B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922791E15BC4F3F004B9F6B /* Icon@2x.png */; };
+		9922792115BC4F42004B9F6B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9922792015BC4F42004B9F6B /* Icon.png */; };
 		993A060915BB751B00EB93FF /* Quest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993A060815BB751B00EB93FF /* Quest@2x.png */; };
 		995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C7E9E15BB5B630066D8D5 /* LCMapController.m */; };
 		995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995C7E9F15BB5B630066D8D5 /* LCMapController.xib */; };
@@ -84,6 +86,8 @@
 		9922791815BC461E004B9F6B /* BottomBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BottomBar@2x.png"; sourceTree = "<group>"; };
 		9922791A15BC46E4004B9F6B /* BarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BarButton@2x.png"; sourceTree = "<group>"; };
 		9922791C15BC4B95004B9F6B /* BackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackButton@2x.png"; sourceTree = "<group>"; };
+		9922791E15BC4F3F004B9F6B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9922792015BC4F42004B9F6B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		993A060815BB751B00EB93FF /* Quest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quest@2x.png"; sourceTree = "<group>"; };
 		995C7E9D15BB5B630066D8D5 /* LCMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMapController.h; sourceTree = "<group>"; };
 		995C7E9E15BB5B630066D8D5 /* LCMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMapController.m; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 		997449C315BB5A640022EFF4 = {
 			isa = PBXGroup;
 			children = (
+				9922792015BC4F42004B9F6B /* Icon.png */,
+				9922791E15BC4F3F004B9F6B /* Icon@2x.png */,
 				99BBDAEF15BB699E00332C88 /* QuartzCore.framework */,
 				995C7EAE15BB603D0066D8D5 /* CoreLocation.framework */,
 				995C7EA515BB5D730066D8D5 /* MapKit.framework */,
@@ -351,6 +357,8 @@
 				9922791915BC461E004B9F6B /* BottomBar@2x.png in Resources */,
 				9922791B15BC46E4004B9F6B /* BarButton@2x.png in Resources */,
 				9922791D15BC4B95004B9F6B /* BackButton@2x.png in Resources */,
+				9922791F15BC4F3F004B9F6B /* Icon@2x.png in Resources */,
+				9922792115BC4F42004B9F6B /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
