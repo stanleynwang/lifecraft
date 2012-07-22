@@ -43,3 +43,16 @@
   background-color: #651d14;
 }
 
+form.signin input.email-address {
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+form.signin button.btn {
+  margin-bottom: 0;
+}
+
+#yield p {
+  margin-top: 1.5em;
+}
+
