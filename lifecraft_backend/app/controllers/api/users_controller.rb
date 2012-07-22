@@ -1,23 +1,21 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit, :update]
 
-  def new
-    @user = User.new
-  end
-
   def create
-    @user = User.new(params[:user])
+    # email
+    # password
+    # password_confirmation
+    user_params = {}
+    user_params[:email] = params[:email]
+    user_params[:password] = params[:password]
+    user_params[:password_confirmation] = params[:password_confirmation]
+    @user = User.new(user_params)
 
-    # Saving without session maintenance to skip
-    # auto-login which can't happen here because
-    # the User has not yet been activated
     if @user.save
-      flash[:notice] = "Your account has been created."
-      redirect_to signup_url
+      render :text => "{success: true}"
     else
-      flash[:notice] = "There was a problem creating you."
-      render :action => :new
+      render :text => "{success: false}"
     end
 
   end
