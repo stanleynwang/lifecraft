@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 
-(function($) {
+(function($, window) {
+"use strict";
 
 var Lifecraft = (function() {
   var _user = null;
@@ -43,7 +44,7 @@ var Lifecraft = (function() {
         if (!data.success) {
           $(document).trigger('auth:signedout', {success: false});
         } else {
-          user = null;
+          _user = null;
           $(document).trigger('auth:signedout', {success: true});
         }
       }
@@ -65,8 +66,16 @@ var Lifecraft = (function() {
     getUser: getUser
   };
 })();
+window.Lifecraft = Lifecraft;
 
 $(function() {
+  $('#user-info-template').template('userInfo');
+
+  var $fullProgressbar = $('<div class="progress progress-striped active span3">');
+  $('<div class="bar">').css('width', '100%').appendTo($fullProgressbar.css({
+    marginBottom: '0', marginTop: '9px'
+  }));
+
   $('ul.nav li a[href!="#"]').click(function() {
     var $e = $(this), $yield = $('#yield'), target = '/_' + $e.attr('href');
     $yield.load(target, function() {
@@ -85,14 +94,32 @@ $(function() {
   });
 
   $('form.signin').submit(function() {
-    var email = $(this).find('input[type=email]').val();
+    var $e = $(this), $email = $e.find('input[type=email]');
+    var email = $email.val();
+    $email.replaceWith($fullProgressbar);
+    $e.find('button').prop('disabled', true);
+
     Lifecraft.signin(email);
-    $(document).on('auth:signedin', function(data) {
-      console.log(data);
-    });
+    return false;
+  });
+
+  $(document).on('auth:signedin', function(event, data) {
+    if (data.success) {
+      var $userInfo = $.tmpl('userInfo', data.user);
+      $('form.signin').replaceWith($userInfo);
+    } else {
+      $fullProgressbar.replaceWith($('<div class="alert alert-error">').html(
+        'An error occured while signing in.'
+      ));
+    }
+  });
+
+  $(document).on('click', 'ul.userinfo a.signout', function(event) {
+    Lifecraft.signout();
+    window.location.reload();
     return false;
   });
 });
 
-})(jQuery);
+})(jQuery, window);
 
