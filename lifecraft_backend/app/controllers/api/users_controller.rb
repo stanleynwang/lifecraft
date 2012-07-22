@@ -13,9 +13,9 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render :text => "{success: true}"
+      render :json => {:success => true}
     else
-      render :text => "{success: false}"
+      render :json => {:success => false}
     end
 
   end

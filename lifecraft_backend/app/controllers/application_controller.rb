@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       unless current_user
         store_location
         flash[:notice] = "You must be logged in to access this page"
-        render :text => "{notice: user login required}"
+        render :json => {:notice => "user login required"}
         # redirect_to new_user_session_url
         # return false
       end
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
       if current_user
         store_location
         flash[:notice] = "You must be logged out to access this page"
-        render :text => "{notice: must be logged out}"
+        render :json => {:notice => "must be logged out"}
         # redirect_to account_url
         # return false
       end
