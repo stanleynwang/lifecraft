@@ -14,4 +14,6 @@
 @property (strong) LCQuest *quest;
 @property (assign) BOOL isFarAway;
 
+- (void)setFarAway;
+
 @end

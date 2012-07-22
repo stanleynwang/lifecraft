@@ -11,6 +11,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "LCQuest.h"
 #import "LCQuestView.h"
+#import "LCUser.h"
+#import "LCUserView.h"
 
 @interface LCMapController ()
 
@@ -20,7 +22,7 @@
 @synthesize mapView;
 @synthesize overlay;
 
-@synthesize locationManager, lastLocation, quests;
+@synthesize locationManager, lastLocation, quests, users;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +37,7 @@
     [super viewDidLoad];
     [self setupCurrentUser];
     [self loadQuests];
+    [self loadUsers];
 }
 
 - (void)setupMap {
@@ -85,6 +88,26 @@
     self.mapView.showsUserLocation = YES;
 }
 
+#pragma mark - Helpers
+- (void)positionView:(UIView *)view byDistance:(NSInteger)distance {
+    CGFloat maxY = 300;
+    NSInteger maxX = 320;
+    
+    CGFloat x = (arc4random() % (maxX-10)) - 20;
+    
+    if (distance > 78) {
+        distance = 78;
+        [view performSelector:@selector(setFarAway)];
+    }
+    
+    CGFloat y = maxY - (((CGFloat)distance)/100 * maxY) - 60;
+    NSLog(@"%f %f", x, y);
+    
+    
+    CGRect frame = view.frame;
+    frame.origin = CGPointMake(x, y);
+    view.frame = frame;
+}
 
 #pragma mark - Loading quests
 
@@ -110,36 +133,44 @@
 }
 
 - (void)displayQuests {
-    CGFloat maxY = 300;
-    NSInteger maxX = 320;
-    
     for (LCQuest *quest in self.quests) {
-        // Create a view for this quest
-        
-        // Random X
-        CGFloat x = (arc4random() % (maxX-10)) - 20;
-        // Y based on distance
-        NSInteger distance = quest.distance.integerValue;
-        BOOL isFarAway = NO;
-        if (distance > 78) {
-            distance = 78;
-            isFarAway = YES;
-        }
-        
-        NSLog(@"Distance: %d", distance);
-        CGFloat y = maxY - (((CGFloat)distance)/100 * maxY) - 50;
-        NSLog(@"%f %f", x, y);
-        
-        LCQuestView *view = [[LCQuestView alloc] initWithFrame:CGRectMake(x, y, 0, 0)];
+        LCQuestView *view = [[LCQuestView alloc] initWithFrame:CGRectZero];
         view.quest = quest;
-        
-        if (isFarAway) {
-            view.isFarAway = YES;
-        }
-        
+        [self positionView:view byDistance:quest.distance.integerValue];
         [self.overlay addSubview:view];
     }
 }
 
+/*************************************************/
+#pragma mark - Users
+/*************************************************/
+
+- (void)loadUsers {
+    LCUser *user1 = [[LCUser alloc] init];
+    user1.name = @"kourge";
+    user1.level = [NSNumber numberWithInt:4];
+    user1.email = @"kourge@gmail.com";
+    user1.experience = [NSNumber numberWithInt:1000];
+    user1.distance = [NSNumber numberWithInt:30];
+    
+    LCUser *user2 = [[LCUser alloc] init];
+    user2.name = @"Mahhh";
+    user2.level = [NSNumber numberWithInt:3];
+    user2.email = @"mahhaha@gmail.com";
+    user2.experience = [NSNumber numberWithInt:700];
+    user2.distance = [NSNumber numberWithInt:40];
+    
+    self.users = [NSArray arrayWithObjects:user1, user2, nil];
+    [self displayUsers];
+}
+
+- (void)displayUsers {
+    for (LCUser *user in self.users) {
+        LCUserView *view = [[LCUserView alloc] initWithFrame:CGRectZero];
+        view.user = user;
+        [self positionView:view byDistance:user.distance.integerValue];
+        [self.overlay addSubview:view];
+    }
+}
 
 @end

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8D3199AD43224FD4B755C2CF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E584A651DE34ABBBBE9979B /* libPods.a */; };
 		99015ACC15BB7BB9007F50D2 /* QuestArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99015ACB15BB7BB9007F50D2 /* QuestArrow@2x.png */; };
+		99015AD015BB7D86007F50D2 /* LCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 99015ACF15BB7D86007F50D2 /* LCUser.m */; };
+		99066D3D15BB82910034528D /* LCUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D3C15BB82910034528D /* LCUserView.m */; };
+		99066D4215BB83410034528D /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 99066D4115BB83410034528D /* NSString+Utils.m */; };
 		993A060915BB751B00EB93FF /* Quest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993A060815BB751B00EB93FF /* Quest@2x.png */; };
 		995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C7E9E15BB5B630066D8D5 /* LCMapController.m */; };
 		995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995C7E9F15BB5B630066D8D5 /* LCMapController.xib */; };
@@ -31,6 +34,12 @@
 /* Begin PBXFileReference section */
 		4E584A651DE34ABBBBE9979B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		99015ACB15BB7BB9007F50D2 /* QuestArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QuestArrow@2x.png"; sourceTree = "<group>"; };
+		99015ACE15BB7D86007F50D2 /* LCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUser.h; sourceTree = "<group>"; };
+		99015ACF15BB7D86007F50D2 /* LCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUser.m; sourceTree = "<group>"; };
+		99066D3B15BB82910034528D /* LCUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserView.h; sourceTree = "<group>"; };
+		99066D3C15BB82910034528D /* LCUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserView.m; sourceTree = "<group>"; };
+		99066D4015BB83410034528D /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		99066D4115BB83410034528D /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		993A060815BB751B00EB93FF /* Quest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quest@2x.png"; sourceTree = "<group>"; };
 		995C7E9D15BB5B630066D8D5 /* LCMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMapController.h; sourceTree = "<group>"; };
 		995C7E9E15BB5B630066D8D5 /* LCMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMapController.m; sourceTree = "<group>"; };
@@ -76,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99066D3F15BB83170034528D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				99066D4015BB83410034528D /* NSString+Utils.h */,
+				99066D4115BB83410034528D /* NSString+Utils.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		995C7EA315BB5B680066D8D5 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +147,7 @@
 		997449D815BB5A640022EFF4 /* Lifecraft */ = {
 			isa = PBXGroup;
 			children = (
+				99066D3F15BB83170034528D /* Other */,
 				99A4373515BB772D004BF2C7 /* Views */,
 				99BBDAF515BB705400332C88 /* Models */,
 				99BBDAE715BB65F900332C88 /* Resources */,
@@ -156,6 +175,8 @@
 			children = (
 				99A4373715BB773A004BF2C7 /* LCQuestView.h */,
 				99A4373815BB773A004BF2C7 /* LCQuestView.m */,
+				99066D3B15BB82910034528D /* LCUserView.h */,
+				99066D3C15BB82910034528D /* LCUserView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -177,6 +198,8 @@
 			children = (
 				99BBDAF615BB709800332C88 /* LCQuest.h */,
 				99BBDAF715BB709800332C88 /* LCQuest.m */,
+				99015ACE15BB7D86007F50D2 /* LCUser.h */,
+				99015ACF15BB7D86007F50D2 /* LCUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -272,6 +295,9 @@
 				995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */,
 				99BBDAF815BB709800332C88 /* LCQuest.m in Sources */,
 				99A4373915BB773A004BF2C7 /* LCQuestView.m in Sources */,
+				99015AD015BB7D86007F50D2 /* LCUser.m in Sources */,
+				99066D3D15BB82910034528D /* LCUserView.m in Sources */,
+				99066D4215BB83410034528D /* NSString+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

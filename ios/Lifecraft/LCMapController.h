@@ -18,12 +18,22 @@
 
 @property (strong) NSArray *quests;
 
+@property (strong) NSArray *users;
+
 
 - (void)setupMap;
 // Shows current user's avatar
 - (void)setupCurrentUser;
 
+#pragma mark - Displaying helpers
+- (void)positionView:(UIView *)view byDistance:(NSInteger)distance;
+
+#pragma mark - Quests
 - (void)loadQuests;
 - (void)displayQuests;
+
+#pragma mark - Users
+- (void)loadUsers;
+- (void)displayUsers;
 
 @end

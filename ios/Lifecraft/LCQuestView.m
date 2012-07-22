@@ -58,5 +58,8 @@
     }
 }
 
+- (void)setFarAway {
+    self.isFarAway = YES;
+}
 
 @end
