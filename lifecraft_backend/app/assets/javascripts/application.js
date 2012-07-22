@@ -154,7 +154,7 @@ $(function() {
 
   $(document).on('quests:fetched', function(event, data) {
     console.log(data);
-  }
+  });
 });
 
 })(jQuery, window);
