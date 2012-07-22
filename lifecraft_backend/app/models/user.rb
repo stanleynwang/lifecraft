@@ -23,8 +23,8 @@ class User < ActiveRecord::Base
   end
 
   def level_up
-    return unless can_level_up?
     return if self.level.nil?
+    return unless can_level_up?
 
     self.level = LevelManager::new_level(self.level, self.experience)
   end
