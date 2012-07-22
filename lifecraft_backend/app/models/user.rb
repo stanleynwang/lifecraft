@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
   has_many :quests
   belongs_to :current_quest, :class_name => "Quest"
+  before_save :level_up
 
   acts_as_authentic do |c|
   end
@@ -19,6 +20,16 @@ class User < ActiveRecord::Base
 
   def log_errors
     Rails.logger.debug self.errors.full_messages.join("\n")
+  end
+
+  def level_up
+    return unless can_level_up?
+
+    self.level = LevelManager::new_level(self.level, self.experience)
+  end
+
+  def can_level_up?
+    self.experience >= LevelManager::required_exp(self.level + 1)
   end
 
   def to_json(options = {})
