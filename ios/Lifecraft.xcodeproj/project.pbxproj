@@ -40,6 +40,8 @@
 		99BBDAF315BB6A8800332C88 /* Mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BBDAF115BB6A8800332C88 /* Mask.png */; };
 		99BBDAF415BB6A8800332C88 /* Mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BBDAF215BB6A8800332C88 /* Mask@2x.png */; };
 		99BBDAF815BB709800332C88 /* LCQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BBDAF715BB709800332C88 /* LCQuest.m */; };
+		99D57E7815BBB3EA00B79F22 /* LCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D57E7615BBB3EA00B79F22 /* LCLoginController.m */; };
+		99D57E7915BBB3EA00B79F22 /* LCLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D57E7715BBB3EA00B79F22 /* LCLoginController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,9 @@
 		99BBDAF215BB6A8800332C88 /* Mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mask@2x.png"; sourceTree = "<group>"; };
 		99BBDAF615BB709800332C88 /* LCQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuest.h; sourceTree = "<group>"; };
 		99BBDAF715BB709800332C88 /* LCQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuest.m; sourceTree = "<group>"; };
+		99D57E7515BBB3EA00B79F22 /* LCLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoginController.h; sourceTree = "<group>"; };
+		99D57E7615BBB3EA00B79F22 /* LCLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLoginController.m; sourceTree = "<group>"; };
+		99D57E7715BBB3EA00B79F22 /* LCLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCLoginController.xib; sourceTree = "<group>"; };
 		D9586312057F4136801A5B49 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -143,6 +148,9 @@
 				99066D7015BBA0FA0034528D /* LCQuestsList.h */,
 				99066D7115BBA0FA0034528D /* LCQuestsList.m */,
 				99066D7215BBA0FA0034528D /* LCQuestsList.xib */,
+				99D57E7515BBB3EA00B79F22 /* LCLoginController.h */,
+				99D57E7615BBB3EA00B79F22 /* LCLoginController.m */,
+				99D57E7715BBB3EA00B79F22 /* LCLoginController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 				99066D6A15BB9AC90034528D /* Level@2x.png in Resources */,
 				99066D6F15BBA0560034528D /* Button@2x.png in Resources */,
 				99066D7415BBA0FA0034528D /* LCQuestsList.xib in Resources */,
+				99D57E7915BBB3EA00B79F22 /* LCLoginController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +363,7 @@
 				99066D6D15BB9C380034528D /* LCDataContext.m in Sources */,
 				99066D7315BBA0FA0034528D /* LCQuestsList.m in Sources */,
 				99066D7E15BBA21A0034528D /* LCQuestCell.m in Sources */,
+				99D57E7815BBB3EA00B79F22 /* LCLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
