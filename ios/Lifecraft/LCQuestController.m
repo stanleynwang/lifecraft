@@ -31,6 +31,7 @@
     [self setText:nil];
     [super viewDidUnload];
 }
+
 - (IBAction)accept:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
