@@ -38,5 +38,5 @@ gem 'authlogic'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'nokogiri'
+gem 'mechanize'
 gem 'rest-client', '~> 1.6.7'
