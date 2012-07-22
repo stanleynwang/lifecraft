@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8D3199AD43224FD4B755C2CF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E584A651DE34ABBBBE9979B /* libPods.a */; };
+		99015ACC15BB7BB9007F50D2 /* QuestArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99015ACB15BB7BB9007F50D2 /* QuestArrow@2x.png */; };
+		993A060915BB751B00EB93FF /* Quest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993A060815BB751B00EB93FF /* Quest@2x.png */; };
 		995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C7E9E15BB5B630066D8D5 /* LCMapController.m */; };
 		995C7EA115BB5B630066D8D5 /* LCMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995C7E9F15BB5B630066D8D5 /* LCMapController.xib */; };
 		995C7EA615BB5D730066D8D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995C7EA515BB5D730066D8D5 /* MapKit.framework */; };
@@ -18,14 +20,18 @@
 		997449DD15BB5A640022EFF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 997449DB15BB5A640022EFF4 /* InfoPlist.strings */; };
 		997449DF15BB5A640022EFF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 997449DE15BB5A640022EFF4 /* main.m */; };
 		997449E315BB5A640022EFF4 /* LCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 997449E215BB5A640022EFF4 /* LCAppDelegate.m */; };
+		99A4373915BB773A004BF2C7 /* LCQuestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A4373815BB773A004BF2C7 /* LCQuestView.m */; };
 		99BBDAEA15BB664D00332C88 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 99BBDAE915BB664D00332C88 /* placeholder.jpg */; };
 		99BBDAF015BB699E00332C88 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BBDAEF15BB699E00332C88 /* QuartzCore.framework */; };
 		99BBDAF315BB6A8800332C88 /* Mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BBDAF115BB6A8800332C88 /* Mask.png */; };
 		99BBDAF415BB6A8800332C88 /* Mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BBDAF215BB6A8800332C88 /* Mask@2x.png */; };
+		99BBDAF815BB709800332C88 /* LCQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BBDAF715BB709800332C88 /* LCQuest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E584A651DE34ABBBBE9979B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		99015ACB15BB7BB9007F50D2 /* QuestArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QuestArrow@2x.png"; sourceTree = "<group>"; };
+		993A060815BB751B00EB93FF /* Quest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quest@2x.png"; sourceTree = "<group>"; };
 		995C7E9D15BB5B630066D8D5 /* LCMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMapController.h; sourceTree = "<group>"; };
 		995C7E9E15BB5B630066D8D5 /* LCMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMapController.m; sourceTree = "<group>"; };
 		995C7E9F15BB5B630066D8D5 /* LCMapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCMapController.xib; sourceTree = "<group>"; };
@@ -41,10 +47,14 @@
 		997449E015BB5A640022EFF4 /* Lifecraft-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lifecraft-Prefix.pch"; sourceTree = "<group>"; };
 		997449E115BB5A640022EFF4 /* LCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAppDelegate.h; sourceTree = "<group>"; };
 		997449E215BB5A640022EFF4 /* LCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAppDelegate.m; sourceTree = "<group>"; };
+		99A4373715BB773A004BF2C7 /* LCQuestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuestView.h; sourceTree = "<group>"; };
+		99A4373815BB773A004BF2C7 /* LCQuestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuestView.m; sourceTree = "<group>"; };
 		99BBDAE915BB664D00332C88 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		99BBDAEF15BB699E00332C88 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		99BBDAF115BB6A8800332C88 /* Mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mask.png; sourceTree = "<group>"; };
 		99BBDAF215BB6A8800332C88 /* Mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mask@2x.png"; sourceTree = "<group>"; };
+		99BBDAF615BB709800332C88 /* LCQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuest.h; sourceTree = "<group>"; };
+		99BBDAF715BB709800332C88 /* LCQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuest.m; sourceTree = "<group>"; };
 		D9586312057F4136801A5B49 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -119,6 +129,8 @@
 		997449D815BB5A640022EFF4 /* Lifecraft */ = {
 			isa = PBXGroup;
 			children = (
+				99A4373515BB772D004BF2C7 /* Views */,
+				99BBDAF515BB705400332C88 /* Models */,
 				99BBDAE715BB65F900332C88 /* Resources */,
 				997449E115BB5A640022EFF4 /* LCAppDelegate.h */,
 				997449E215BB5A640022EFF4 /* LCAppDelegate.m */,
@@ -139,14 +151,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		99A4373515BB772D004BF2C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99A4373715BB773A004BF2C7 /* LCQuestView.h */,
+				99A4373815BB773A004BF2C7 /* LCQuestView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		99BBDAE715BB65F900332C88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				99BBDAF115BB6A8800332C88 /* Mask.png */,
 				99BBDAF215BB6A8800332C88 /* Mask@2x.png */,
 				99BBDAE915BB664D00332C88 /* placeholder.jpg */,
+				993A060815BB751B00EB93FF /* Quest@2x.png */,
+				99015ACB15BB7BB9007F50D2 /* QuestArrow@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		99BBDAF515BB705400332C88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99BBDAF615BB709800332C88 /* LCQuest.h */,
+				99BBDAF715BB709800332C88 /* LCQuest.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +238,8 @@
 				99BBDAEA15BB664D00332C88 /* placeholder.jpg in Resources */,
 				99BBDAF315BB6A8800332C88 /* Mask.png in Resources */,
 				99BBDAF415BB6A8800332C88 /* Mask@2x.png in Resources */,
+				993A060915BB751B00EB93FF /* Quest@2x.png in Resources */,
+				99015ACC15BB7BB9007F50D2 /* QuestArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +270,8 @@
 				997449DF15BB5A640022EFF4 /* main.m in Sources */,
 				997449E315BB5A640022EFF4 /* LCAppDelegate.m in Sources */,
 				995C7EA015BB5B630066D8D5 /* LCMapController.m in Sources */,
+				99BBDAF815BB709800332C88 /* LCQuest.m in Sources */,
+				99A4373915BB773A004BF2C7 /* LCQuestView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

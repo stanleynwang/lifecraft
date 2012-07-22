@@ -9,6 +9,8 @@
 #import "LCMapController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <QuartzCore/QuartzCore.h>
+#import "LCQuest.h"
+#import "LCQuestView.h"
 
 @interface LCMapController ()
 
@@ -18,7 +20,7 @@
 @synthesize mapView;
 @synthesize overlay;
 
-@synthesize locationManager, lastLocation;
+@synthesize locationManager, lastLocation, quests;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupCurrentUser];
+    [self loadQuests];
 }
 
 - (void)setupMap {
@@ -45,7 +48,7 @@
 }
 
 - (void)setupCurrentUser {
-    UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(135, 310, 50, 50)];
+    UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(135, 305, 50, 50)];
     avatar.backgroundColor = [UIColor redColor];
     UIImage *placeholder = [UIImage imageNamed:@"placeholder.jpg"];
 //    avatar.image = placeholder;
@@ -83,18 +86,60 @@
 }
 
 
-- (void)viewDidUnload
-{
-    [self setMapView:nil];
-    [self setOverlay:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+#pragma mark - Loading quests
+
+- (void)loadQuests {
+    // Stub some quests
+    LCQuest *quest1 = [[LCQuest alloc] init];
+    quest1.distance = [NSNumber numberWithInt:5];
+    quest1.title = @"Greylock Hackfest";
+    quest1.text = @"Come spend the weekend at Dropbox HQ hacking on your own projects!";
+    quest1.location = [[CLLocation alloc] initWithLatitude:37.776154 longitude:-122.393136];
+    quest1.experience = [NSNumber numberWithInt:200];
+    
+    LCQuest *quest2 = [[LCQuest alloc] init];
+    quest2.distance = [NSNumber numberWithInt:300];
+    quest2.title = @"Visit Alcatraz";
+    quest2.text = @"Trip to Alcatraz for $30.";
+    quest2.location = [[CLLocation alloc] initWithLatitude:37.0625 longitude:-95.677068];
+    quest2.experience = [NSNumber numberWithInt:200];
+    
+    self.quests = [NSArray arrayWithObjects:quest1, quest2, nil];
+    
+    [self displayQuests];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)displayQuests {
+    CGFloat maxY = 300;
+    NSInteger maxX = 320;
+    
+    for (LCQuest *quest in self.quests) {
+        // Create a view for this quest
+        
+        // Random X
+        CGFloat x = (arc4random() % (maxX-10)) - 20;
+        // Y based on distance
+        NSInteger distance = quest.distance.integerValue;
+        BOOL isFarAway = NO;
+        if (distance > 78) {
+            distance = 78;
+            isFarAway = YES;
+        }
+        
+        NSLog(@"Distance: %d", distance);
+        CGFloat y = maxY - (((CGFloat)distance)/100 * maxY) - 50;
+        NSLog(@"%f %f", x, y);
+        
+        LCQuestView *view = [[LCQuestView alloc] initWithFrame:CGRectMake(x, y, 0, 0)];
+        view.quest = quest;
+        
+        if (isFarAway) {
+            view.isFarAway = YES;
+        }
+        
+        [self.overlay addSubview:view];
+    }
 }
+
 
 @end

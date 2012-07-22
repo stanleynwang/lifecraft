@@ -16,11 +16,14 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *overlay;
 
+@property (strong) NSArray *quests;
+
 
 - (void)setupMap;
 // Shows current user's avatar
 - (void)setupCurrentUser;
 
-- (UIImage*)maskImage:(UIImage *)image withMask:(UIImage *)maskImage;
+- (void)loadQuests;
+- (void)displayQuests;
 
 @end
