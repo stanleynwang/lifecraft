@@ -62,8 +62,10 @@ var Lifecraft = (function() {
   }
 
   function getQuests() {
-    if ('geolocation' in navigator) {
+    if (false && 'geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(function(pos) {
+        console.log('pos');
+        console.log(pos);
         _fetchQuests(pos.coords.latitude, pos.coords.longitude);
       });
     } else {
@@ -90,6 +92,7 @@ window.Lifecraft = Lifecraft;
 
 $(function() {
   $('#user-info-template').template('userInfo');
+  $('#quest-template').template('quest');
 
   var $fullProgressbar = $('<div class="progress progress-striped active span3">');
   $('<div class="bar">').css('width', '100%').appendTo($fullProgressbar.css({
@@ -153,7 +156,12 @@ $(function() {
   });
 
   $(document).on('quests:fetched', function(event, data) {
-    console.log(data);
+    var $yield = $('#yield');
+    $yield.html('<div class="row"></div>');
+    data.quests.forEach(function(quest) {
+      var $row = $yield.find('.row');
+      $.tmpl('quest', quest).appendTo($row);
+    });
   });
 });
 
