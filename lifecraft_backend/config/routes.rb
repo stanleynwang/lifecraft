@@ -17,7 +17,11 @@ Lifecraft::Application.routes.draw do
     # match :logout => 'user_sessions#destroy' , :as => :logout
     # match :signup => 'users#new',              :as => :signup
   end
-  match 'api/login'  => 'api/user_sessions#create',  :as => :'api/login'
-  match 'api/logout' => 'api/user_sessions#destroy', :as => :'api/logout'
-  match 'api/signup' => 'api/users#create',          :as => :'api/signup'
+  match 'api/login'  => 'api/user_sessions#create',     :as => :'api_login'
+  match 'api/logout' => 'api/user_sessions#destroy', :as => :'api_logout'
+  match 'api/signup' => 'api/users#create',          :as => :'api_signup'
+  match 'api/quest/new' => 'api/quests#new',        :as => :'api_quest_new'
+  match 'api/quest/:id' => 'api/quests#show',       :as => :'api_quest_id'
+  match 'api/quest/:id/complete' => 'api/quests#complete_quest',
+    :as => :'api_quest_id_complete'
 end
