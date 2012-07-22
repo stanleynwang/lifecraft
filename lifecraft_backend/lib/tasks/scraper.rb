@@ -16,4 +16,5 @@ module Scraper
 end
 
 require 'scraper/san_francisco_events'
+require 'scraper/sf_gate'
 

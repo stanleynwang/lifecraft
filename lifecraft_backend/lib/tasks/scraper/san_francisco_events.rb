@@ -3,7 +3,7 @@ require 'peach'
 require 'cgi'
 
 class Scraper::SanFranciscoEvents
-  Scraper::SCRAPERS << self
+  # Scraper::SCRAPERS << self
 
   URL_HOST = 'http://www.sanfrancisco.travel'
   URL_BASE = "#{URL_HOST}/events/"
