@@ -16,6 +16,8 @@
 @property (strong) CLLocation *location;
 @property (strong) NSNumber *experience;
 @property (strong) NSString *identifier;
+@property (assign) BOOL isCurrent;
+@property (strong) NSString *address;
 
 + (NSArray *)questsFromResponse:(NSArray *)data;
 

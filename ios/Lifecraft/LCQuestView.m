@@ -28,7 +28,15 @@
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 15, 50, 50)];
-    [button setImage:[UIImage imageNamed:@"Quest.png"] forState:UIControlStateNormal];    
+    
+    NSString *imageName;
+    if (quest.isCurrent) {
+        imageName = @"QuestFinish.png";
+    } else {
+        imageName = @"Quest.png";
+    }
+    
+    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];    
     [self addSubview:button];
     [button addTarget:self action:@selector(didTap:) forControlEvents:UIControlEventTouchUpInside];
     

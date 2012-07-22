@@ -26,6 +26,7 @@ class Api::QuestsController < ApplicationController
     render :json => current_user.quests.reject{ |x| x.completed }.map { |q|
       data = q.as_json
       data.merge!(q.activity.as_json)
+      data[:is_current] = true
       data
     }
   end
